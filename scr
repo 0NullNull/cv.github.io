@@ -1,0 +1,12 @@
+<video src="images/epicwizardskills.mp4" autoplay loop class="picture" style="width: 100%; display: none; border-radius: 10%;" id="wizardvid"></video>
+            <script>
+                const image = document.getElementById("face");
+                const video = document.getElementById("wizardvid");
+                
+                image.addEventListener("click", () => {
+                    image.style.display = "none";
+                    video.style.display = "block"; 
+                    video.volume = 0.1;
+                    video.play();
+                });
+            </script>

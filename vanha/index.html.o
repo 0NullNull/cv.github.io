@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasper Kuirinlahti</title>
+    <link rel="stylesheet" href="ansioluettelo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="back">
+        <div class="left">
+            <div class="container">
+                <img src="images/kuva.png" alt="" style="width: 100%;height: 100%;">
+                <div class="name Font"><h2 style="font-weight: 100;">Kasper Kuirinlahti</h2></div>
+            </div>
+            <div style="margin: 10px;">
+                <p><i class="fa fa-briefcase ico"></i>Tieto- ja viestintätekniikan perustutkinto<br>Ohjelmistokehittäjä</p>
+                <p><i class="fa fa-home ico"></i> Pirkanmaa, FI</p>
+                <p><i class="fa fa-envelope ico"></i> kuirinlahtikasper@gmail.com</p>
+                <hr>
+                <button class="selectedNav Font navButton" onclick="location.href='index.html'">Home</button>
+                <button class="Font navButton" onclick="location.href='ansioluettelo_skills.html'">Skills</button>
+                <button class="Font navButton" onclick="location.href='ansioluettelo_experience.html'">Experience</button>
+                <button class="Font navButton" onclick="window.location.href='ansioluettelo_education.html'">Education</button>
+            </div>
+        </div>
+        <div class="right">
+            <div class="education">
+                <div style="margin: 10px;margin-top: -1px; color: cornflowerblue;">
+                    <p style="font-size: 25px;">
+                        Olen looginen ajattelija ja koulutukseltani tieto- ja viestintätekniikan perustutkinnon suorittanut ohjelmistokehittäjä. Erikoisosaamiseni painottuu ohjelmistokehityksen lisäksi monipuoliseen tietoteknisten laitteiden hallintaan ja ongelmanratkaisuun. Pidän huolellisesta työskentelystä ja kyvystäni käsitellä sekä monimutkaisia teknisiä haasteita että löytää tehokkaita ratkaisuja. Olen motivoitunut jatkuvasti kehittämään taitojani ja oppimaan uusia teknologioita, ja minua kiinnostavat erityisesti tehtävät, joissa voin yhdistää teknisen osaamiseni ja ongelmanratkaisukykyni käytännön kehitystyöhön.
+                    </p>
+                </div>
+            </div>
+        </div>   
+    </div>
+</body>
+</html>

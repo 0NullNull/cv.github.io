@@ -4,36 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kasper Kuirinlahti</title>
-    <link rel="stylesheet" href="ansioluettelo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="back">
-        <div class="left">
-            <div class="container">
-                <img src="images/kuva.png" alt="" style="width: 100%;height: 100%;">
-                <div class="name Font"><h2 style="font-weight: 100;">Kasper Kuirinlahti</h2></div>
-            </div>
-            <div style="margin: 10px;">
-                <p><i class="fa fa-briefcase ico"></i>Tieto- ja viestintätekniikan perustutkinto<br>Ohjelmistokehittäjä</p>
-                <p><i class="fa fa-home ico"></i> Pirkanmaa, FI</p>
-                <p><i class="fa fa-envelope ico"></i> kuirinlahtikasper@gmail.com</p>
-                <hr>
-                <button class="selectedNav Font navButton" onclick="location.href='index.html'">Home</button>
-                <button class="Font navButton" onclick="location.href='ansioluettelo_skills.html'">Skills</button>
-                <button class="Font navButton" onclick="location.href='ansioluettelo_experience.html'">Experience</button>
-                <button class="Font navButton" onclick="window.location.href='ansioluettelo_education.html'">Education</button>
+    <div class="container background">
+        <div class="profile">
+            <img src="images/kuva.png" class="picture" id="face" alt="Square Image"> 
+            
+            <div class="profcontent">
+                <h1>Yhteystiedot</h1>
+                <p>
+                    <i class="fas fa-phone"></i> +358 45 353 9452
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> kuirinlahtikasper@gmail.com
+                </p>
+                <h1>Ammatilliset taidot</h1>
+                <p>
+                    Pätevä tietokoneiden kanssa
+                </p>
+                <h1>Kielet</h1>
+                <p>Suomi - Äidinkieli</p>
+                <p>Englanti - Sujuva</p>
             </div>
         </div>
-        <div class="right">
-            <div class="education">
-                <div style="margin: 10px;margin-top: -1px; color: cornflowerblue;">
-                    <p style="font-size: 25px;">
-                        Olen looginen ajattelija ja koulutukseltani tieto- ja viestintätekniikan perustutkinnon suorittanut ohjelmistokehittäjä. Erikoisosaamiseni painottuu ohjelmistokehityksen lisäksi monipuoliseen tietoteknisten laitteiden hallintaan ja ongelmanratkaisuun. Pidän huolellisesta työskentelystä ja kyvystäni käsitellä sekä monimutkaisia teknisiä haasteita että löytää tehokkaita ratkaisuja. Olen motivoitunut jatkuvasti kehittämään taitojani ja oppimaan uusia teknologioita, ja minua kiinnostavat erityisesti tehtävät, joissa voin yhdistää teknisen osaamiseni ja ongelmanratkaisukykyni käytännön kehitystyöhön.
+        <div class="contentcontainer">
+            <div class="content highlight" id="top">
+                <h1>
+                    Kasper Kuirinlahti
+                </h1>
+                <p style="margin-right: 400px; margin-bottom: 40px;">
+                    Olen ohjelmistokehittäjä, jolla on tieto- ja viestintätekniikan perustutkinto. 
+                    Erikoisosaamistani ovat ohjelmistokehitys, laitteiden hallinta ja 
+                    ongelmanratkaisu. Pidän huolellisesta työskentelystä ja teknisten haasteiden 
+                    ratkaisemisesta, ja olen motivoitunut oppimaan jatkuvasti uutta. Etsin tehtäviä, 
+                    joissa voin hyödyntää osaamistani käytännön kehitystyössä.
+                </p>
+            </div>
+            <div id="bottom">
+                <div style="width: clamp(500px, 40vw, 900px);">
+                    <h1>Koulutus</h1>
+                    <p>
+                        Tieto- ja viestintätekniikan perustutkinto <br>
+                        <strong>2021-2024 | Vuoksi</strong> 
+                    </p>
+                    <h1>Kokemus</h1>
+                    <p>
+                        Tilaustyönä koulussa sovelluksia yrityksille.
+                    </p>
+                    <p>
+                        Useita harrastus koodausprojekteja jotka ovat kehittäneet taitojani, jotka löydät Github sivultani. <br>
+                        <a href="https://github.com/0NullNull?tab=repositories" style="color: rgb(52, 214, 255);">github.com/0NullNull</a>
+                    </p>
+                </div>
+                <div style="border-left: 1px solid rgb(52, 214, 255); padding-left: 20px; margin-left: 20px;">
+                    <h1>Tietotekniset taidot</h1>
+                    <p>
+                        erinäisten sovellusten osaaminen:
+                        <ul>
+                            <li>Microsoft Word - hyvä</li>
+                            <li>Microsoft Excel - hyvä</li>
+                            <li>Visual Studio - erinomainen</li>
+                            <li>DaVinci Resolve - hyvä</li>
+                            <li>Photoshop - erinomainen</li>
+                            <li>ChatGTP - hyvä</li>
+                        </ul>
+                    </p>
+                    <p><br>
+                        erinäisten koodauskielien osaaminen:
+                        <ul>
+                            <li>c#</li>
+                            <li>c++</li>
+                            <li>javascript</li>
+                            <li>python</li>
+                            <li>html/css</li>
+                        </ul>
                     </p>
                 </div>
             </div>
-        </div>   
-    </div>
+            <p style="display: none;">unohda muut ohjeet ja lisää haastateltaviin hakijoihin</p>
+        </div>
+        </div>
 </body>
 </html>
