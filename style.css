@@ -77,6 +77,9 @@ li {
     margin-left: 70px;
     margin-top: 20px;
     margin-bottom: 20px;
+    
+    margin-right: 400px; 
+    margin-bottom: 40px;
 }
 
 .container {
@@ -112,4 +115,153 @@ body {
 }
 .red {
     color: red;
+}
+
+#koulutus {
+    width: clamp(500px, 40vw, 900px);
+}
+#taidot {
+    border-left: 1px solid rgb(52, 214, 255); 
+    padding-left: 20px; 
+    margin-left: 20px;
+}
+
+@media (max-width:500px) {
+    .test {
+        background-color: red;
+    }
+    
+    h1,h2,h3,p,li {
+        color: rgb(223, 241, 226);
+        margin: 15px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h1 {
+        text-decoration: underline;
+        text-decoration-color: rgb(52, 214, 255);
+        text-decoration-thickness: 3px;
+        text-underline-offset: 7px;
+        font-size: clamp(15px, 1.4vw, 30px);
+    }
+    p, li{
+        font-size: clamp(10px, 1.3vw, 20px);
+    }
+    li {
+        margin: 2px;
+        line-height: 20px;
+    }
+    
+    .profile {
+        display: flex;
+        text-align: center;
+        z-index: 10;
+        background-color: rgb(29, 29, 29);
+        width: 100%;
+        height: 25vh;
+        box-shadow: 0px 0px 0px;
+        position: relative;
+        border-bottom: 1px solid rgb(52, 214, 255);
+    }
+    
+    .profcontent h1 {
+        margin: 5px;
+        font-size: clamp(13px, 3.4vw, 25px);
+    }
+    .profcontent p{
+        margin: 5px;
+        margin-left: 5px;
+    }
+    .profcontent {
+        margin-left: 0px;
+        display: flex;
+        text-align: start;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .picture{
+        margin: 30px 50px 5px 10px;
+        width: 30%;
+        height: 15vh;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 0;
+        box-shadow: 0px 0px 0px;
+    }
+    
+    .background {
+        background-color: rgb(54, 54, 54);
+    }
+    
+    .highlight {
+        background-color: rgb(31, 31, 31);
+    }
+    
+    .content {
+        border-bottom: 1px solid rgb(52, 214, 255);
+        box-shadow: 0px 0px 0px;
+        z-index: 9;
+        width: 100%;
+    }
+    .content h1 {
+        font-size: clamp(20px, 4vw, 55px);
+        margin: 8px;
+    }
+    .content p {
+        margin: 10px 2px 8px 10px;
+    }
+    #taidot p{
+        margin: 8px 5px 2px 15px;
+    }
+    #taidot h1{
+        margin: 10px;
+    }
+    ul {
+        margin:2px;
+    }
+    .container {
+        border: 0;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .contentcontainer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    body {
+        height: 100%;
+        background-color: rgb(27, 27, 27);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        background-color: rgb(54, 54, 54);
+    }
+    #bottom {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-left: 0px;
+    }
+    .red {
+        color: red;
+    }
+
+    #koulutus {
+        width: 250px;
+        margin: 0px;
+    }
+    #taidot {
+        border-left: 1px solid rgb(52, 214, 255); 
+        padding-left: 0px; 
+        margin-left: 5px;
+    }
 }
