@@ -47,6 +47,8 @@ li {
 }
 
 .picture{
+    max-width: 300px;
+    max-height: 300px;
     width: 60%;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -126,13 +128,14 @@ body {
     margin-left: 20px;
 }
 
-@media (max-width:500px) {
+
+@media (max-width:1000px) {
     .test {
         background-color: red;
     }
     
     h1,h2,h3,p,li {
-        color: rgb(223, 241, 226);
+        color: rgb(255, 255, 255);
         margin: 15px;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
@@ -149,6 +152,9 @@ body {
     li {
         margin: 2px;
         line-height: 20px;
+    }
+    .ttclass{
+        font-size: 13px;
     }
     
     .profile {
@@ -179,10 +185,15 @@ body {
         justify-content: start;
     }
     
+    #imgcontainer{
+        justify-content: center;
+        align-items: center;
+    }
+
     .picture{
         margin: 30px 30px 5px 30px;
-        width: 30%;
-        height: 15vh;
+        width: 70%;
+        height: 70%;
         aspect-ratio: 1/1;
         object-fit: cover;
         border-radius: 50%;
@@ -255,7 +266,7 @@ body {
     .red {
         color: red;
     }
-
+    
     #koulutus {
         width: 250px;
         margin: 0px;
@@ -264,5 +275,21 @@ body {
         border-left: 1px solid rgb(52, 214, 255); 
         padding-left: 0px; 
         margin-left: 5px;
+    }
+}
+
+@media (max-width:370px){
+    .ttclass{
+        font-size: 11px;
+    }
+    .picture{
+        margin: 30% 30px 40px 30px;
+        width: 50%;
+        height: 50%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid rgb(52, 214, 255);
+        box-shadow: 0px 0px 0px; 
     }
 }
