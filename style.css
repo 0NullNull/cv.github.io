@@ -2,6 +2,10 @@
     background-color: red;
 }
 
+.aqua{
+    color: rgb(52, 214, 255);
+}
+
 h1,h2,h3,p,li {
     color: rgb(223, 241, 226);
     margin: 15px;
