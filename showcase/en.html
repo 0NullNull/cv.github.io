@@ -15,8 +15,8 @@
 <body>
 <main class="wrap">
   <nav class="topbar" aria-label="Page">
-    <a href="../">← Back to CV</a>
-    <div class="lang"><a href="./" hreflang="fi" lang="fi">FI</a><span aria-current="page">EN</span></div>
+    <a href="../en.html">← Back to CV</a>
+    <div class="lang"><a href="./" hreflang="fi" lang="fi" data-lang="fi">FI</a><span aria-current="page">EN</span></div>
   </nav>
 
   <!-- ===== Hero ===== -->
@@ -48,6 +48,14 @@
         <dt>UI components</dt><dd>370</dd>
         <dt>Schema migrations</dt><dd>317</dd>
         <dt>Languages</dt><dd>Finnish · English</dd>
+      </dl>
+      <div class="plate-head plate-sub"><strong>In use</strong><span>10/2026</span></div>
+      <dl>
+        <dt>Users</dt><dd>≈ 15, rollout ongoing</dd>
+        <dt>Sites</dt><dd>235</dd>
+        <dt>Projects</dt><dd>261</dd>
+        <dt>Devices</dt><dd>428</dd>
+        <dt>Files &amp; images</dt><dd>20,000+</dd>
       </dl>
       <p class="plate-foot">Figures exclude generated code and database migrations.</p>
     </aside>
@@ -278,10 +286,17 @@
   </aside>
 
   <footer>
-    <a href="../">Kasper Kuirinlahti · CV</a>
+    <a href="../en.html">Kasper Kuirinlahti · CV</a>
     <span>Case study · 2026</span>
   </footer>
 
 </main>
+<script>
+    document.querySelectorAll("[data-lang]").forEach(function (a) {
+        a.addEventListener("click", function () {
+            try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {}
+        });
+    });
+</script>
 </body>
 </html>

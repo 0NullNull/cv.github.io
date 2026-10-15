@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kenttätoimintojen alusta</title>
 <meta name="description" content="Projektiesittely: toiminnanohjausalusta, jonka suunnittelin ja rakensin suomalaiselle kylmä- ja jäärata-alan insinööriyritykselle.">
+<script>
+// Send visitors whose browser languages include no Finnish to the English page,
+// unless they already picked a language with the FI/EN switch.
+(function () {
+    var pref = null;
+    try { pref = localStorage.getItem("lang"); } catch (e) {}
+    if (pref === "fi") return;
+    var langs = navigator.languages || [navigator.language || "fi"];
+    var finnish = langs.some(function (l) { return /^fi\b/i.test(l); });
+    if (pref === "en" || !finnish) location.replace("en.html" + location.hash);
+})();
+</script>
 <link rel="alternate" hreflang="fi" href="./">
 <link rel="alternate" hreflang="en" href="en.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +28,7 @@
 <main class="wrap">
   <nav class="topbar" aria-label="Sivu">
     <a href="../">← Takaisin CV:hen</a>
-    <div class="lang"><span aria-current="page">FI</span><a href="en.html" hreflang="en" lang="en">EN</a></div>
+    <div class="lang"><span aria-current="page">FI</span><a href="en.html" hreflang="en" lang="en" data-lang="en">EN</a></div>
   </nav>
 
   <!-- ===== Hero ===== -->
@@ -48,6 +60,14 @@
         <dt>UI-komponentit</dt><dd>370</dd>
         <dt>Skeemamigraatiot</dt><dd>317</dd>
         <dt>Kielet</dt><dd>suomi · englanti</dd>
+      </dl>
+      <div class="plate-head plate-sub"><strong>Käytössä</strong><span>10/2026</span></div>
+      <dl>
+        <dt>Käyttäjät</dt><dd>≈ 15, käyttöönotto käynnissä</dd>
+        <dt>Kohteet</dt><dd>235</dd>
+        <dt>Projektit</dt><dd>261</dd>
+        <dt>Laitteet</dt><dd>428</dd>
+        <dt>Tiedostot ja kuvat</dt><dd>20 000+</dd>
       </dl>
       <p class="plate-foot">Luvuista on rajattu pois generoitu koodi ja tietokantamigraatiot.</p>
     </aside>
@@ -283,5 +303,12 @@
   </footer>
 
 </main>
+<script>
+    document.querySelectorAll("[data-lang]").forEach(function (a) {
+        a.addEventListener("click", function () {
+            try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {}
+        });
+    });
+</script>
 </body>
 </html>
