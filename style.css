@@ -255,18 +255,60 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 }
 
 /* ---------- Print ---------- */
+.print-only { display: none; }
+
+/* ---------- Print / Save as PDF (A4) ---------- */
+@page { size: A4; margin: 14mm 14mm 12mm; }
 @media print {
     :root, :root:not([data-theme="light"]), :root[data-theme="dark"] {
-        --ground: #fff; --surface: #fff; --ink: #000; --muted: #444; --line: #bbb;
+        --ground: #fff; --surface: #fff; --ink: #000; --muted: #444; --line: #c4c4c4;
         --brine: #1d4f66; --amber: #8A5B00; --cta: #8A5B00; --track: #ddd;
         color-scheme: light;
     }
-    body { font-size: 12px; }
-    .cv { padding: 0; gap: 24px; max-width: none; }
-    .cols { grid-template-columns: minmax(0, 1fr) 220px; gap: 32px; }
-    .feature { background: none; color: var(--ink); border: 1px solid var(--line); padding: 12px 14px; }
-    .job, .feature { break-inside: avoid; }
-    .topline { display: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-size: 10.5pt; line-height: 1.45; }
+    .print-only { display: revert; }
+    .topline, .feature-cta { display: none; }
+
+    .cv { padding: 0; gap: 16px; max-width: none; }
+    .head { grid-template-columns: 26mm 1fr; gap: 6mm; padding-bottom: 12px; }
+    .photo { width: 26mm; }
+    .head h1 { font-size: 24pt; }
+    .title { font-size: 9.5pt; }
+    .tagline { font-size: 10pt; }
+    .contact { margin-top: 6px; gap: 2px 18px; font-size: 9pt; }
+
+    .cols { grid-template-columns: minmax(0, 1fr) 56mm; gap: 8mm; }
+    .main { gap: 14px; }
+    .side { gap: 12px; }
+    section { gap: 8px; }
+    h2 { font-size: 7.5pt; }
+    .profile { font-size: 10pt; }
+    .seeking, .job-intro, .where, .rows li { font-size: 9.5pt; }
+    .job h3 { font-size: 11.5pt; }
+    .job + .job { padding-top: 10px; }
+    .job ul { font-size: 9.5pt; }
+
+    .jobstats { margin-top: 8px; }
+    .jobstats li { padding: 5px 8px; font-size: 8pt; }
+    .jobstats b { font-size: 13pt; }
+    .subs { margin-top: 8px; }
+    .subs li { padding: 4px 0 4px 10px; }
+    .subs b { font-size: 9.5pt; }
+    .subs .tech { font-size: 7.5pt; }
+    .subs li > span:last-child { font-size: 9pt; }
+
+    .feature { margin-top: 8px; background: none; color: var(--ink); border: 1px solid var(--line); padding: 8px 12px; gap: 2px; }
+    .feature-title { font-size: 11.5pt; }
+    .feature-stats { font-size: 8.5pt; }
+    .feature-url { font: 400 8.5pt/1.3 var(--mono); color: var(--brine); }
+
+    .chips { gap: 3px; }
+    .chips span { font-size: 7.5pt; padding: 3px 5px; }
+    .rows li { padding: 4px 0; }
+
+    .job, .feature, .subs li, .side section { break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
 }
 @media (prefers-reduced-motion: reduce) {
     .feature { transition: none; }
