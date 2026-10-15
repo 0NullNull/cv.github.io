@@ -9,6 +9,12 @@
     --amber: #B67A06;
     --cta: #E9AE3A;
     --track: #DCE3E6;
+    --core: #24617D;   --core-bg: #E2EEF4;
+    --ai: #6A4DA6;     --ai-bg: #EEE8F8;
+    --integr: #2B7A4B; --integr-bg: #E1F1E7;
+    --infra: #9A5A00;  --infra-bg: #F7EBD6;
+    --tools: #4B5A78;  --tools-bg: #E7EAF1;
+    --other: #5A676E;  --other-bg: #ECEFF1;
     --display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
     --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
     --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
@@ -25,10 +31,22 @@
         --amber: #E9AE3A;
         --cta: #8A5B00;
         --track: #2A3A44;
+        --core: #6FB3D2;   --core-bg: #16303D;
+        --ai: #B6A0E8;     --ai-bg: #2A2342;
+        --integr: #6CC690; --integr-bg: #173325;
+        --infra: #E9AE3A;  --infra-bg: #382A11;
+        --tools: #A6B3CF;  --tools-bg: #232A38;
+        --other: #A3AEB4;  --other-bg: #212B31;
         color-scheme: dark;
     }
 }
 :root[data-theme="dark"] {
+    --core: #6FB3D2;   --core-bg: #16303D;
+    --ai: #B6A0E8;     --ai-bg: #2A2342;
+    --integr: #6CC690; --integr-bg: #173325;
+    --infra: #E9AE3A;  --infra-bg: #382A11;
+    --tools: #A6B3CF;  --tools-bg: #232A38;
+    --other: #A3AEB4;  --other-bg: #212B31;
     --ground: #0D161C;
     --surface: #142028;
     --ink: #E3EBEF;
@@ -40,6 +58,14 @@
     --track: #2A3A44;
     color-scheme: dark;
 }
+
+/* Category colour: each group sets --c / --c-bg, components read them */
+.cat-core   { --c: var(--core);   --c-bg: var(--core-bg); }
+.cat-ai     { --c: var(--ai);     --c-bg: var(--ai-bg); }
+.cat-integr { --c: var(--integr); --c-bg: var(--integr-bg); }
+.cat-infra  { --c: var(--infra);  --c-bg: var(--infra-bg); }
+.cat-tools  { --c: var(--tools);  --c-bg: var(--tools-bg); }
+.cat-other  { --c: var(--other);  --c-bg: var(--other-bg); }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -142,6 +168,12 @@ h2 {
     gap: 12px;
 }
 h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.main h2 { color: var(--ink); font-weight: 600; font-size: 12.5px; }
+.main h2::before { content: ""; width: 10px; height: 10px; background: var(--amber); border-radius: 2px; }
+
+/* Sidebar group headings take the group colour */
+.side h2 { color: var(--c, var(--muted)); font-weight: 600; }
+.side h2::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c, var(--muted)); }
 
 .profile { font-size: 17px; max-width: 64ch; }
 .seeking { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: 15.5px; }
@@ -158,10 +190,19 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .when {
     font: 400 13px/1.4 var(--mono);
     color: var(--muted);
+    flex-shrink: 0;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
 }
 .where { color: var(--muted); font-size: 15px; }
+.job-head .when {
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 2px 8px;
+}
+.job h3 { color: var(--brine); }
 .job ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 15.5px; }
 .job li::marker { color: var(--amber); }
 .job-intro { font-size: 15.5px; margin-top: 6px; max-width: 64ch; }
@@ -181,7 +222,7 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 }
 .job .jobstats { padding-left: 0; gap: 1px; }
 .jobstats li { background: var(--surface); padding: 10px 12px; display: grid; gap: 2px; font-size: 13px; color: var(--muted); }
-.jobstats b { font: 700 22px/1.1 var(--display); font-stretch: 112%; color: var(--ink); font-variant-numeric: tabular-nums; }
+.jobstats b { font: 700 22px/1.1 var(--display); font-stretch: 112%; color: var(--brine); font-variant-numeric: tabular-nums; }
 
 /* Sub-projects inside one job */
 .subs { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 0; }
@@ -191,11 +232,11 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 2px 16px;
     padding: 10px 0 10px 14px;
-    border-left: 2px solid var(--line);
+    border-left: 3px solid var(--c, var(--line));
 }
-.subs li:hover { border-left-color: var(--amber); }
+.subs li + li { margin-top: 4px; }
 .subs b { font-weight: 600; font-size: 15.5px; }
-.subs .tech { font: 400 12px/1.6 var(--mono); color: var(--brine); text-align: right; }
+.subs .tech { font: 500 12px/1.6 var(--mono); color: var(--c, var(--brine)); text-align: right; }
 .subs li > span:last-child { grid-column: 1 / -1; color: var(--muted); font-size: 14.5px; }
 
 /* Featured project card, inverted panel */
@@ -235,9 +276,11 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
     font: 500 12.5px/1 var(--mono);
     padding: 7px 9px;
     border-radius: 3px;
-    background: var(--surface);
-    border: 1px solid var(--line);
+    background: var(--c-bg, var(--surface));
+    border: 1px solid var(--c-bg, var(--line));
+    color: var(--ink);
 }
+.outline .chips span { background: var(--surface); border-color: var(--c); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
@@ -262,6 +305,12 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
     :root, :root:not([data-theme="light"]), :root[data-theme="dark"] {
         --ground: #fff; --surface: #fff; --ink: #000; --muted: #444; --line: #c4c4c4;
         --brine: #1d4f66; --amber: #8A5B00; --cta: #8A5B00; --track: #ddd;
+        --core: #24617D;   --core-bg: #E2EEF4;
+        --ai: #6A4DA6;     --ai-bg: #EEE8F8;
+        --integr: #2B7A4B; --integr-bg: #E1F1E7;
+        --infra: #9A5A00;  --infra-bg: #F7EBD6;
+        --tools: #4B5A78;  --tools-bg: #E7EAF1;
+        --other: #5A676E;  --other-bg: #ECEFF1;
         color-scheme: light;
     }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
