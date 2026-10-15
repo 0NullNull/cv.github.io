@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Field Operations Platform</title>
-<meta name="description" content="Case study: an operations platform I designed and built for a Finnish refrigeration and ice-rink engineering company.">
+<meta name="description" content="Case study: the operations platform I designed and built for Suomen Tekojää Oy, a Finnish ice-rink and refrigeration engineering company.">
 <link rel="alternate" hreflang="fi" href="./">
 <link rel="alternate" hreflang="en" href="en.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +22,11 @@
   <!-- ===== Hero ===== -->
   <header class="hero">
     <div class="hero-text">
-      <p class="eyebrow">Case study · Internal platform · 2026</p>
+      <p class="eyebrow">Case study · Suomen Tekojää Oy · 2026</p>
       <h1>One platform for the sites, machines and people behind <em>cold</em>.</h1>
       <p class="lede">
-        A Finnish engineering company that builds ice rinks, heat pumps and cold-storage systems
-        had dedicated tools for each part of its work. I designed and built a single platform that brings them together and goes further:
+        <a href="https://tekojaa.fi">Suomen Tekojää Oy</a> is a Finnish engineering company that builds ice rinks, heat pumps and cold-storage systems,
+        and it had dedicated tools for each part of its work. I designed and built a single platform that brings them together and goes further:
         fleet management, live machine telemetry, service work, project delivery, customer access and an AI assistant
         that works with the company's own data.
       </p>
@@ -44,9 +44,6 @@
         <dt>Built since</dt><dd>Jan 2026</dd>
         <dt>Commits</dt><dd>1 600+</dd>
         <dt>Application code</dt><dd>≈ 270 000 lines</dd>
-        <dt>API controllers</dt><dd>65</dd>
-        <dt>UI components</dt><dd>370</dd>
-        <dt>Schema migrations</dt><dd>317</dd>
         <dt>Languages</dt><dd>Finnish · English</dd>
       </dl>
       <div class="plate-head plate-sub"><strong>In use</strong><span>10/2026</span></div>
@@ -57,7 +54,7 @@
         <dt>Devices</dt><dd>428</dd>
         <dt>Files &amp; images</dt><dd>20,000+</dd>
       </dl>
-      <p class="plate-foot">Figures exclude generated code and database migrations.</p>
+      <p class="plate-foot">Code figure excludes generated code.</p>
     </aside>
   </header>
 
@@ -107,10 +104,10 @@
         <span class="cap-tag">Telemetry</span>
         <h3>Live data from field controllers</h3>
         <ul>
-          <li>Data collector for industrial PLCs, packaged as a Windows service with setup wizard and signed self-updates</li>
+          <li>Data collection from industrial controllers at customer sites</li>
           <li>Controller alarms automatically open service tickets</li>
-          <li>Trends and connectivity history per device</li>
-          <li>Secure browser access to on-site machine interfaces, no VPN needed</li>
+          <li>Trends and status history per device</li>
+          <li>Easy installation and automatic updates for site PCs</li>
         </ul>
       </article>
       <article class="cap">
@@ -139,7 +136,7 @@
           <li>Tool-calling LLM agent that queries sites, devices, tickets, energy prices and weather</li>
           <li>Proposed changes are staged and confirmed by the user before saving</li>
           <li>Semantic search (RAG) that respects each user's access rights</li>
-          <li>Switchable between cloud models and local models on own GPU hardware, with usage budgets</li>
+          <li>Works with both cloud and locally hosted language models</li>
         </ul>
       </article>
       <article class="cap">
@@ -149,7 +146,7 @@
           <li>Separate internet-facing app for the company's customers</li>
           <li>Customers see only the sites granted to them</li>
           <li>Service requests and two-way messaging with staff</li>
-          <li>Isolated from internal data down to the database role</li>
+          <li>Kept separate from the company's internal systems</li>
         </ul>
       </article>
       <article class="cap">
@@ -176,10 +173,10 @@
         <span class="cap-tag">Governance</span>
         <h3>Security &amp; compliance</h3>
         <ul>
-          <li>Hierarchical roles plus per-site and per-file access rules</li>
+          <li>Role-based access down to individual sites and files</li>
           <li>Complete audit trail of data changes</li>
-          <li>Encrypted file storage and scoped, rate-limited API keys</li>
-          <li>AI-assisted security agent that reviews activity and writes daily reports</li>
+          <li>Encrypted file storage</li>
+          <li>Automated security monitoring and reporting</li>
         </ul>
       </article>
     </div>
@@ -206,7 +203,7 @@
           <div class="node core">
             <b>Platform API</b>
             <small>Business logic, access control, audit trail, background workers, real-time events</small>
-            <ul><li>ASP.NET Core</li><li>PostgreSQL</li><li>SignalR</li><li>pgvector</li></ul>
+            <ul><li>.NET</li><li>PostgreSQL</li><li>Real-time events</li></ul>
           </div>
         </div>
         <div class="arrow" aria-hidden="true">→</div>
@@ -229,15 +226,15 @@
     <div class="practices">
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
-        <div><h3>Security by default</h3><p>Every record read and write goes through row-level access checks. Restricted data looks like it does not exist. Sensitive personal data is masked in the UI. Security audits are staged, starting with the internet-facing surfaces.</p></div>
+        <div><h3>Security by default</h3><p>Access rights are checked on every record a user reads or changes, personal data is protected in the interface, and the system is reviewed for security regularly.</p></div>
       </div>
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>
-        <div><h3>Self-hosted operations</h3><p>The full containerised stack runs on on-premises hardware behind a hardened reverse proxy. Scripted deployments, versioned releases, encrypted backups and a beta environment mirrored from production.</p></div>
+        <div><h3>Self-hosted operations</h3><p>The platform runs in containers on the company's own servers, with scripted deployments, versioned releases, encrypted backups and a separate test environment.</p></div>
       </div>
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/></svg>
-        <div><h3>Clear boundaries</h3><p>A shared domain library, an API that owns all writes, and front ends that only talk to the API. The customer app is a separate service with its own minimal database permissions.</p></div>
+        <div><h3>Clear boundaries</h3><p>A shared domain model, one API that handles all business logic, and separate front ends for staff and customers that only talk to that API.</p></div>
       </div>
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1 1 0 0 0 .9 1.5h12.2A1 1 0 0 0 19 19l-5-10V3"/></svg>
@@ -282,12 +279,12 @@
 
   <aside class="note">
     <h3>About what is not shown</h3>
-    <p>This is a live internal system, so the page has no screenshots, source code or internal design details. I am happy to walk through the architecture and the decisions behind it in an interview.</p>
+    <p>The platform is an internal system at Suomen Tekojää Oy, so this page describes it at a general level, without screenshots or source code. I am happy to walk through the architecture and the decisions behind it in an interview.</p>
   </aside>
 
   <footer>
     <a href="../en.html">Kasper Kuirinlahti · CV</a>
-    <span>Case study · 2026</span>
+    <span>Suomen Tekojää Oy · 2026</span>
   </footer>
 
 </main>

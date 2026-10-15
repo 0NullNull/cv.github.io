@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kenttätoimintojen alusta</title>
-<meta name="description" content="Projektiesittely: toiminnanohjausalusta, jonka suunnittelin ja rakensin suomalaiselle kylmä- ja jäärata-alan insinööriyritykselle.">
+<meta name="description" content="Projektiesittely: toiminnanohjausalusta, jonka suunnittelin ja rakensin Suomen Tekojää Oy:lle.">
 <script>
 // Send visitors whose browser languages include no Finnish to the English page,
 // unless they already picked a language with the FI/EN switch.
@@ -34,11 +34,11 @@
   <!-- ===== Hero ===== -->
   <header class="hero">
     <div class="hero-text">
-      <p class="eyebrow">Projektiesittely · Sisäinen järjestelmä · 2026</p>
+      <p class="eyebrow">Projektiesittely · Suomen Tekojää Oy · 2026</p>
       <h1>Yksi alusta <em>kylmän</em> takana oleville kohteille, koneille ja ihmisille.</h1>
       <p class="lede">
-        Jäähalleja, lämpöpumppuja ja kylmävarastoja toteuttavalla suomalaisella insinööriyrityksellä oli omat työkalunsa
-        jokaiseen työnsä osa-alueeseen. Suunnittelin ja rakensin yhden alustan, joka kokoaa ne yhteen ja vie pidemmälle:
+        <a href="https://tekojaa.fi">Suomen Tekojää Oy</a> on jäähalleja, lämpöpumppuja ja kylmävarastoja toteuttava suomalainen insinööriyritys,
+        jolla oli omat työkalunsa jokaiseen työnsä osa-alueeseen. Suunnittelin ja rakensin yhden alustan, joka kokoaa ne yhteen ja vie pidemmälle:
         laitekannan hallinta, kenttälaitteiden reaaliaikainen data, huoltotyö, projektien toteutus, asiakkaiden pääsy
         sekä tekoälyavustaja, joka työskentelee yrityksen omalla datalla.
       </p>
@@ -56,9 +56,6 @@
         <dt>Kehitetty</dt><dd>01/2026 alkaen</dd>
         <dt>Commitit</dt><dd>1 600+</dd>
         <dt>Sovelluskoodi</dt><dd>≈ 270 000 riviä</dd>
-        <dt>API-kontrollerit</dt><dd>65</dd>
-        <dt>UI-komponentit</dt><dd>370</dd>
-        <dt>Skeemamigraatiot</dt><dd>317</dd>
         <dt>Kielet</dt><dd>suomi · englanti</dd>
       </dl>
       <div class="plate-head plate-sub"><strong>Käytössä</strong><span>10/2026</span></div>
@@ -69,7 +66,7 @@
         <dt>Laitteet</dt><dd>428</dd>
         <dt>Tiedostot ja kuvat</dt><dd>20 000+</dd>
       </dl>
-      <p class="plate-foot">Luvuista on rajattu pois generoitu koodi ja tietokantamigraatiot.</p>
+      <p class="plate-foot">Koodimäärästä on rajattu pois generoitu koodi.</p>
     </aside>
   </header>
 
@@ -119,10 +116,10 @@
         <span class="cap-tag">Telemetria</span>
         <h3>Reaaliaikainen data kenttälaitteilta</h3>
         <ul>
-          <li>Teollisuuden PLC-ohjainten datankeruuohjelma Windows-palveluna, asennusvelholla ja allekirjoitetuilla automaattipäivityksillä</li>
+          <li>Datankeruu asiakaskohteiden teollisuusohjaimilta</li>
           <li>Ohjainten hälytykset avaavat huoltotiketit automaattisesti</li>
-          <li>Trendit ja yhteyshistoria laitekohtaisesti</li>
-          <li>Turvallinen selainyhteys kohteen laitteiden käyttöliittymiin ilman VPN:ää</li>
+          <li>Trendit ja tilahistoria laitekohtaisesti</li>
+          <li>Helppo asennus ja automaattiset päivitykset kohteiden tietokoneille</li>
         </ul>
       </article>
       <article class="cap">
@@ -151,7 +148,7 @@
           <li>Työkaluja kutsuva LLM-agentti, joka hakee tietoa kohteista, laitteista, tiketeistä, sähkön hinnasta ja säästä</li>
           <li>Ehdotetut muutokset odottavat käyttäjän vahvistusta ennen tallennusta</li>
           <li>Semanttinen haku (RAG), joka noudattaa jokaisen käyttäjän käyttöoikeuksia</li>
-          <li>Vaihdettavissa pilvimallien ja omalla GPU-laitteistolla ajettavien paikallisten mallien välillä, käyttöbudjetein</li>
+          <li>Toimii sekä pilvessä että paikallisesti ajettavilla kielimalleilla</li>
         </ul>
       </article>
       <article class="cap">
@@ -161,7 +158,7 @@
           <li>Erillinen, internetiin avattu sovellus yrityksen asiakkaille</li>
           <li>Asiakas näkee vain hänelle myönnetyt kohteet</li>
           <li>Huoltopyynnöt ja kaksisuuntainen viestintä henkilöstön kanssa</li>
-          <li>Eristetty sisäisestä datasta tietokantaroolia myöten</li>
+          <li>Erillään yrityksen sisäisistä järjestelmistä</li>
         </ul>
       </article>
       <article class="cap">
@@ -188,10 +185,10 @@
         <span class="cap-tag">Hallinta</span>
         <h3>Tietoturva ja vaatimustenmukaisuus</h3>
         <ul>
-          <li>Hierarkkiset roolit sekä kohde- ja tiedostokohtaiset käyttöoikeudet</li>
+          <li>Roolipohjaiset käyttöoikeudet kohde- ja tiedostotasolle asti</li>
           <li>Kattava muutosloki kaikista datamuutoksista</li>
-          <li>Salattu tiedostotallennus ja rajatut, nopeusrajoitetut API-avaimet</li>
-          <li>Tekoälyavusteinen tietoturva-agentti, joka käy läpi tapahtumat ja laatii päivittäiset raportit</li>
+          <li>Salattu tiedostotallennus</li>
+          <li>Automaattinen tietoturvan valvonta ja raportointi</li>
         </ul>
       </article>
     </div>
@@ -218,7 +215,7 @@
           <div class="node core">
             <b>Alustan rajapinta</b>
             <small>Liiketoimintalogiikka, käyttöoikeudet, muutosloki, taustaprosessit, reaaliaikaiset tapahtumat</small>
-            <ul><li>ASP.NET Core</li><li>PostgreSQL</li><li>SignalR</li><li>pgvector</li></ul>
+            <ul><li>.NET</li><li>PostgreSQL</li><li>Reaaliaikaiset tapahtumat</li></ul>
           </div>
         </div>
         <div class="arrow" aria-hidden="true">→</div>
@@ -241,15 +238,15 @@
     <div class="practices">
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
-        <div><h3>Tietoturva oletuksena</h3><p>Jokainen tietueen luku ja kirjoitus kulkee rivitason käyttöoikeustarkistuksen läpi. Rajattu data näyttää siltä, ettei sitä ole olemassa. Arkaluonteiset henkilötiedot peitetään käyttöliittymässä. Tietoturva-auditoinnit tehdään vaiheittain internetiin näkyvistä osista alkaen.</p></div>
+        <div><h3>Tietoturva oletuksena</h3><p>Käyttöoikeudet tarkistetaan jokaisen tietueen luvussa ja muutoksessa, henkilötiedot on suojattu käyttöliittymässä, ja järjestelmän tietoturva käydään läpi säännöllisesti.</p></div>
       </div>
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>
-        <div><h3>Oma palvelinympäristö</h3><p>Koko kontitettu ympäristö pyörii yrityksen omalla laitteistolla koventetun käänteisvälityspalvelimen takana. Skriptatut julkaisut, versioidut releaset, salatut varmuuskopiot ja tuotannosta peilattu beta-ympäristö.</p></div>
+        <div><h3>Oma palvelinympäristö</h3><p>Alusta toimii konteissa yrityksen omilla palvelimilla. Skriptatut julkaisut, versioidut releaset, salatut varmuuskopiot ja erillinen testiympäristö.</p></div>
       </div>
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/></svg>
-        <div><h3>Selkeät rajat</h3><p>Yhteinen domain-kirjasto, rajapinta joka omistaa kaikki kirjoitukset, ja käyttöliittymät jotka puhuvat vain rajapinnalle. Asiakassovellus on erillinen palvelu omilla, minimaalisilla tietokantaoikeuksillaan.</p></div>
+        <div><h3>Selkeät rajat</h3><p>Yhteinen tietomalli, yksi rajapinta joka hoitaa kaiken liiketoimintalogiikan, sekä erilliset käyttöliittymät henkilöstölle ja asiakkaille, jotka puhuvat vain tälle rajapinnalle.</p></div>
       </div>
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1 1 0 0 0 .9 1.5h12.2A1 1 0 0 0 19 19l-5-10V3"/></svg>
@@ -294,12 +291,12 @@
 
   <aside class="note">
     <h3>Mitä sivulla ei näytetä</h3>
-    <p>Kyseessä on tuotannossa oleva sisäinen järjestelmä, joten sivulla ei ole kuvakaappauksia, lähdekoodia tai sisäisen toteutuksen yksityiskohtia. Käyn mielelläni arkkitehtuurin ja sen taustalla olevat ratkaisut läpi haastattelussa.</p>
+    <p>Alusta on Suomen Tekojää Oy:n sisäinen järjestelmä, joten esittelen sen yleisellä tasolla ilman kuvakaappauksia tai lähdekoodia. Käyn mielelläni arkkitehtuurin ja sen taustalla olevat ratkaisut läpi haastattelussa.</p>
   </aside>
 
   <footer>
     <a href="../">Kasper Kuirinlahti · CV</a>
-    <span>Projektiesittely · 2026</span>
+    <span>Suomen Tekojää Oy · 2026</span>
   </footer>
 
 </main>
