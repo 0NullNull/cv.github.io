@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kenttätoimintojen alusta</title>
+<meta name="description" content="Projektiesittely: toiminnanohjausalusta, jonka suunnittelin ja rakensin suomalaiselle kylmä- ja jäärata-alan insinööriyritykselle.">
+<link rel="alternate" hreflang="fi" href="./">
+<link rel="alternate" hreflang="en" href="en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;125,700;125,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="showcase.css">
+</head>
+<body>
+<main class="wrap">
+  <nav class="topbar" aria-label="Sivu">
+    <a href="../">← Takaisin CV:hen</a>
+    <div class="lang"><span aria-current="page">FI</span><a href="en.html" hreflang="en" lang="en">EN</a></div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Projektiesittely · Sisäinen järjestelmä · 2026</p>
+      <h1>Yksi alusta <em>kylmän</em> takana oleville kohteille, koneille ja ihmisille.</h1>
+      <p class="lede">
+        Jäähalleja, lämpöpumppuja ja kylmävarastoja toteuttavalla suomalaisella insinööriyrityksellä oli omat työkalunsa
+        jokaiseen työnsä osa-alueeseen. Suunnittelin ja rakensin yhden alustan, joka kokoaa ne yhteen ja vie pidemmälle:
+        laitekannan hallinta, kenttälaitteiden reaaliaikainen data, huoltotyö, projektien toteutus, asiakkaiden pääsy
+        sekä tekoälyavustaja, joka työskentelee yrityksen omalla datalla.
+      </p>
+      <div class="role">
+        <span>Pääkehittäjä ja arkkitehti</span>
+        <span>Ylläpito ja palvelinympäristö</span>
+        <span>Päivittäisessä tuotantokäytössä</span>
+      </div>
+    </div>
+
+    <aside class="plate" aria-label="Projektin tekniset tiedot">
+      <div class="plate-head"><strong>Tyyppikilpi</strong><span>REV 2.6</span></div>
+      <dl>
+        <dt>Alusta</dt><dd>.NET 10 · Blazor</dd>
+        <dt>Kehitetty</dt><dd>01/2026 alkaen</dd>
+        <dt>Commitit</dt><dd>1 600+</dd>
+        <dt>Sovelluskoodi</dt><dd>≈ 270 000 riviä</dd>
+        <dt>API-kontrollerit</dt><dd>65</dd>
+        <dt>UI-komponentit</dt><dd>370</dd>
+        <dt>Skeemamigraatiot</dt><dd>317</dd>
+        <dt>Kielet</dt><dd>suomi · englanti</dd>
+      </dl>
+      <p class="plate-foot">Luvuista on rajattu pois generoitu koodi ja tietokantamigraatiot.</p>
+    </aside>
+  </header>
+
+  <!-- ===== Tavoite ===== -->
+  <section aria-labelledby="why">
+    <div class="sec-head">
+      <p class="eyebrow">Tavoite</p>
+      <h2 id="why">Kaikki kohteesta yhdessä paikassa</h2>
+      <p>Yrityksellä oli jo toimivat työkalut jokaiseen tehtävään. Tavoitteena oli yhdistää ne niin, että jokainen tieto syötetään kerran ja se on käytettävissä kaikkialla, missä sitä tarvitaan.</p>
+    </div>
+    <div class="problem">
+      <div>
+        <h3>Yksi yhteinen tietopohja</h3>
+        <p>Kohteet, laitteet, komponentit, huoltohistoria ja projektien dokumentit on linkitetty toisiinsa, joten jäähallin koko historia löytyy yhdellä klikkauksella.</p>
+      </div>
+      <div>
+        <h3>Konedata siellä, missä työ tehdään</h3>
+        <p>Asiakaskohteiden ohjainten hälytykset ja trendit näkyvät saman laitteen tikettien ja huoltohistorian vieressä kaikille, jotka sen parissa työskentelevät.</p>
+      </div>
+      <div>
+        <h3>Sujuvampi huolto ja toimitus</h3>
+        <p>Tiketit, käyntiraportit, käyttöönoton tarkistuslistat ja projektisuunnitelmat noudattavat samoja pohjia, ja asiakkaat voivat seurata heille tehtyä työtä.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Ominaisuudet ===== -->
+  <section aria-labelledby="what">
+    <div class="sec-head">
+      <p class="eyebrow">Mitä se tekee</p>
+      <h2 id="what">Yhdeksän osa-aluetta, yksi yhteinen tietomalli</h2>
+      <p>Jokainen osa-alue on päivittäisessä käytössä oleva kokonaisuus, joka rakentuu samojen käyttöoikeuksien, muutoslokin ja reaaliaikaisen tapahtumajärjestelmän päälle.</p>
+    </div>
+
+    <div class="caps">
+      <article class="cap">
+        <span class="cap-tag">Laitekanta</span>
+        <h3>Kohteet, projektit ja laitteet</h3>
+        <ul>
+          <li>Kattava rekisteri asiakaskohteista ja asennetuista laitteista</li>
+          <li>Karttanäkymä ja usean pysähdyksen reittisuunnittelu huoltomatkoille</li>
+          <li>Komponenttikirjasto painelaitetietoineen</li>
+          <li>Tietojen kattavuuden seuranta laitetyypeittäin</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Telemetria</span>
+        <h3>Reaaliaikainen data kenttälaitteilta</h3>
+        <ul>
+          <li>Teollisuuden PLC-ohjainten datankeruuohjelma Windows-palveluna, asennusvelholla ja allekirjoitetuilla automaattipäivityksillä</li>
+          <li>Ohjainten hälytykset avaavat huoltotiketit automaattisesti</li>
+          <li>Trendit ja yhteyshistoria laitekohtaisesti</li>
+          <li>Turvallinen selainyhteys kohteen laitteiden käyttöliittymiin ilman VPN:ää</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Huolto</span>
+        <h3>Tiketit ja työraportit</h3>
+        <ul>
+          <li>Tiketöinti prioriteetein, vastuuhenkilöin, kuvin ja kommentein</li>
+          <li>Pohjiin perustuvat työraportit PDF-vientinä</li>
+          <li>Käyntien aikataulutus ja IO-käyttöönoton tarkistuslistat</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Toimitus</span>
+        <h3>Projektisuunnitelmat</h3>
+        <ul>
+          <li>Tehtäväpuut riippuvuuksineen, jotka avaavat työt oikeassa järjestyksessä</li>
+          <li>Gantt-aikajana ja vaihekohtainen edistyminen</li>
+          <li>Puhelimelle suunniteltu näkymä asentajille kohteessa</li>
+          <li>Raporttien tarkastus- ja hyväksyntäkierto</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Tekoäly</span>
+        <h3>Avustaja yrityksen datalla</h3>
+        <ul>
+          <li>Työkaluja kutsuva LLM-agentti, joka hakee tietoa kohteista, laitteista, tiketeistä, sähkön hinnasta ja säästä</li>
+          <li>Ehdotetut muutokset odottavat käyttäjän vahvistusta ennen tallennusta</li>
+          <li>Semanttinen haku (RAG), joka noudattaa jokaisen käyttäjän käyttöoikeuksia</li>
+          <li>Vaihdettavissa pilvimallien ja omalla GPU-laitteistolla ajettavien paikallisten mallien välillä, käyttöbudjetein</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Asiakkaat</span>
+        <h3>Asiakasportaali</h3>
+        <ul>
+          <li>Erillinen, internetiin avattu sovellus yrityksen asiakkaille</li>
+          <li>Asiakas näkee vain hänelle myönnetyt kohteet</li>
+          <li>Huoltopyynnöt ja kaksisuuntainen viestintä henkilöstön kanssa</li>
+          <li>Eristetty sisäisestä datasta tietokantaroolia myöten</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Yhteistyö</span>
+        <h3>Reaaliaikainen tiimityö</h3>
+        <ul>
+          <li>Kahdenkeskiset ja ryhmächatit tiedostoin, reaktioin, maininnoin ja linkein tietueisiin</li>
+          <li>Ilmoitukset saapuneisiin, sähköpostiin ja push-viesteinä</li>
+          <li>Sisäinen wiki käyttöoikeuksin</li>
+          <li>Asennettava sovellus ja työpöytämäinen ikkunanäkymä</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Suunnittelu</span>
+        <h3>Energia- ja suunnittelutyökalut</h3>
+        <ul>
+          <li>Sähkön spot-hinnat 15 minuutin tarkkuudella</li>
+          <li>Sääennusteet ja -historia jokaiselle kohteelle</li>
+          <li>Jäähallin lämpöteknisen mitoituksen laskuri liuos- ja kylmäainetaulukoineen (ammoniakki, glykolit, etanoli)</li>
+          <li>PLC:n IO-konfiguraatioiden generaattori</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Hallinta</span>
+        <h3>Tietoturva ja vaatimustenmukaisuus</h3>
+        <ul>
+          <li>Hierarkkiset roolit sekä kohde- ja tiedostokohtaiset käyttöoikeudet</li>
+          <li>Kattava muutosloki kaikista datamuutoksista</li>
+          <li>Salattu tiedostotallennus ja rajatut, nopeusrajoitetut API-avaimet</li>
+          <li>Tekoälyavusteinen tietoturva-agentti, joka käy läpi tapahtumat ja laatii päivittäiset raportit</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Kokonaisuus ===== -->
+  <section aria-labelledby="how">
+    <div class="sec-head">
+      <p class="eyebrow">Miten se toimii</p>
+      <h2 id="how">Konehuoneesta selaimeen</h2>
+      <p>Yksinkertaistettu kuva. Data tulee kentältä ja ulkoisista palveluista, kulkee yhden käyttöoikeudet valvovan rajapinnan kautta ja päätyy jokaiselle käyttäjäryhmälle sen omaan käyttöliittymään.</p>
+    </div>
+    <div class="flow-scroll">
+      <div class="flow" role="img" aria-label="Kenttäohjaimet ja ulkoinen data syötetään keskitettyyn rajapintaan, joka palvelee henkilöstön sovellusta, asiakasportaalia ja tekoälyavustajaa.">
+        <div class="flow-col">
+          <p class="eyebrow">Lähteet</p>
+          <div class="node"><b>Kenttäohjaimet</b><small>PLC:t jäähalleissa ja laitoksissa</small></div>
+          <div class="node"><b>Energia ja sää</b><small>Spot-hinnat, ennusteet</small></div>
+          <div class="node"><b>CRM</b><small>Asiakastietojen synkronointi</small></div>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="flow-col">
+          <p class="eyebrow">Ydin</p>
+          <div class="node core">
+            <b>Alustan rajapinta</b>
+            <small>Liiketoimintalogiikka, käyttöoikeudet, muutosloki, taustaprosessit, reaaliaikaiset tapahtumat</small>
+            <ul><li>ASP.NET Core</li><li>PostgreSQL</li><li>SignalR</li><li>pgvector</li></ul>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="flow-col">
+          <p class="eyebrow">Käyttäjät</p>
+          <div class="node"><b>Henkilöstön sovellus</b><small>Toimisto, kenttäasentajat, johto</small></div>
+          <div class="node"><b>Asiakasportaali</b><small>Kohteiden omistajat ja käyttäjät</small></div>
+          <div class="node"><b>Tekoälyavustaja</b><small>Pilvi- tai paikalliset kielimallit</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Käytännöt ===== -->
+  <section aria-labelledby="practice">
+    <div class="sec-head">
+      <p class="eyebrow">Miten se rakennettiin</p>
+      <h2 id="practice">Kehityskäytännöt</h2>
+    </div>
+    <div class="practices">
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div><h3>Tietoturva oletuksena</h3><p>Jokainen tietueen luku ja kirjoitus kulkee rivitason käyttöoikeustarkistuksen läpi. Rajattu data näyttää siltä, ettei sitä ole olemassa. Arkaluonteiset henkilötiedot peitetään käyttöliittymässä. Tietoturva-auditoinnit tehdään vaiheittain internetiin näkyvistä osista alkaen.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>
+        <div><h3>Oma palvelinympäristö</h3><p>Koko kontitettu ympäristö pyörii yrityksen omalla laitteistolla koventetun käänteisvälityspalvelimen takana. Skriptatut julkaisut, versioidut releaset, salatut varmuuskopiot ja tuotannosta peilattu beta-ympäristö.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/></svg>
+        <div><h3>Selkeät rajat</h3><p>Yhteinen domain-kirjasto, rajapinta joka omistaa kaikki kirjoitukset, ja käyttöliittymät jotka puhuvat vain rajapinnalle. Asiakassovellus on erillinen palvelu omilla, minimaalisilla tietokantaoikeuksillaan.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1 1 0 0 0 .9 1.5h12.2A1 1 0 0 0 19 19l-5-10V3"/></svg>
+        <div><h3>Testattu ja seurattava</h3><p>Automaattiset testit CI-putkessa, virhekoodiluettelo jonka koodeilla käyttäjä voi asioida tuessa, häiriöiden seuranta, käyttötilastot ja reaaliaikainen tilapaneeli.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8"/></svg>
+        <div><h3>Rakennettu käyttäjien kanssa</h3><p>Ominaisuudet on muotoiltu yhdessä asentajien, projektipäälliköiden ja toimistohenkilöstön kanssa. Koko käyttöliittymä on suomeksi ja englanniksi, siinä on kahdeksan teemaa ja mobiilinäkymä kenttätyöhön.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+        <div><h3>Tekoälyavusteinen kehitys</h3><p>Agenttipohjainen ohjelmointityönkulku, jota tukee ylläpidetty arkkitehtuuridokumentaatio, jotta jokainen muutos noudattaa samoja periaatteita ja käytäntöjä.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Teknologiat ===== -->
+  <section aria-labelledby="stack">
+    <div class="sec-head">
+      <p class="eyebrow">Teknologia</p>
+      <h2 id="stack">Teknologiat</h2>
+    </div>
+    <div class="stack">
+      <div>
+        <p class="eyebrow">Sovellus</p>
+        <div class="chips"><span class="chip">C# / .NET 10</span><span class="chip">ASP.NET Core</span><span class="chip">Blazor</span><span class="chip">EF Core</span><span class="chip">SignalR</span><span class="chip">JavaScript</span><span class="chip">PWA</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">Data</p>
+        <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">Aikasarjat</span><span class="chip">Muutosloki</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">Tekoäly ja integraatiot</p>
+        <div class="chips"><span class="chip">Claude API</span><span class="chip">Ollama</span><span class="chip">RAG</span><span class="chip">Tool calling</span><span class="chip">Python</span><span class="chip">Beckhoff ADS</span><span class="chip">Microsoft Entra ID</span><span class="chip">REST-rajapinnat</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">Infrastruktuuri</p>
+        <div class="chips"><span class="chip">Docker</span><span class="chip">Nginx</span><span class="chip">Linux</span><span class="chip">NVIDIA GPU</span><span class="chip">GitHub Actions</span><span class="chip">Bash</span><span class="chip">Node.js</span></div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="note">
+    <h3>Mitä sivulla ei näytetä</h3>
+    <p>Kyseessä on tuotannossa oleva sisäinen järjestelmä, joten sivulla ei ole kuvakaappauksia, lähdekoodia tai sisäisen toteutuksen yksityiskohtia. Käyn mielelläni arkkitehtuurin ja sen taustalla olevat ratkaisut läpi haastattelussa.</p>
+  </aside>
+
+  <footer>
+    <a href="../">Kasper Kuirinlahti · CV</a>
+    <span>Projektiesittely · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

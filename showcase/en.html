@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Field Operations Platform</title>
+<meta name="description" content="Case study: an operations platform I designed and built for a Finnish refrigeration and ice-rink engineering company.">
+<link rel="alternate" hreflang="fi" href="./">
+<link rel="alternate" hreflang="en" href="en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;125,700;125,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="showcase.css">
+</head>
+<body>
+<main class="wrap">
+  <nav class="topbar" aria-label="Page">
+    <a href="../">← Back to CV</a>
+    <div class="lang"><a href="./" hreflang="fi" lang="fi">FI</a><span aria-current="page">EN</span></div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Case study · Internal platform · 2026</p>
+      <h1>One platform for the sites, machines and people behind <em>cold</em>.</h1>
+      <p class="lede">
+        A Finnish engineering company that builds ice rinks, heat pumps and cold-storage systems
+        had dedicated tools for each part of its work. I designed and built a single platform that brings them together and goes further:
+        fleet management, live machine telemetry, service work, project delivery, customer access and an AI assistant
+        that works with the company's own data.
+      </p>
+      <div class="role">
+        <span>Lead developer &amp; architect</span>
+        <span>Hosting &amp; operations</span>
+        <span>In daily production use</span>
+      </div>
+    </div>
+
+    <aside class="plate" aria-label="Project specifications">
+      <div class="plate-head"><strong>Rating plate</strong><span>REV 2.6</span></div>
+      <dl>
+        <dt>Platform</dt><dd>.NET 10 · Blazor</dd>
+        <dt>Built since</dt><dd>Jan 2026</dd>
+        <dt>Commits</dt><dd>1 600+</dd>
+        <dt>Application code</dt><dd>≈ 270 000 lines</dd>
+        <dt>API controllers</dt><dd>65</dd>
+        <dt>UI components</dt><dd>370</dd>
+        <dt>Schema migrations</dt><dd>317</dd>
+        <dt>Languages</dt><dd>Finnish · English</dd>
+      </dl>
+      <p class="plate-foot">Figures exclude generated code and database migrations.</p>
+    </aside>
+  </header>
+
+  <!-- ===== Problem ===== -->
+  <section aria-labelledby="why">
+    <div class="sec-head">
+      <p class="eyebrow">The goal</p>
+      <h2 id="why">Everything about a site, in one place</h2>
+      <p>The company already had working tools for each job. The aim was to connect them, so that each piece of information is entered once and is available wherever it is needed.</p>
+    </div>
+    <div class="problem">
+      <div>
+        <h3>One shared record</h3>
+        <p>Sites, devices, components, service history and project documents are linked together, so the full history of an ice rink is a single click away.</p>
+      </div>
+      <div>
+        <h3>Machine data where the work happens</h3>
+        <p>Alarms and trends from the controllers at customer sites appear next to the tickets and service history of the same equipment, for everyone who works on it.</p>
+      </div>
+      <div>
+        <h3>Smoother service and delivery</h3>
+        <p>Tickets, visit reports, commissioning checklists and project plans follow the same templates, and customers can follow the work done for them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Capabilities ===== -->
+  <section aria-labelledby="what">
+    <div class="sec-head">
+      <p class="eyebrow">What it does</p>
+      <h2 id="what">Nine areas, one shared data model</h2>
+      <p>Each area is a full feature set in daily use, built on the same permissions, audit trail and real-time event system.</p>
+    </div>
+
+    <div class="caps">
+      <article class="cap">
+        <span class="cap-tag">Fleet</span>
+        <h3>Sites, projects &amp; devices</h3>
+        <ul>
+          <li>Full registry of customer sites and installed equipment</li>
+          <li>Map view with a multi-stop route planner for service trips</li>
+          <li>Component catalog with pressure-equipment data</li>
+          <li>Data-completeness tracking per device type</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Telemetry</span>
+        <h3>Live data from field controllers</h3>
+        <ul>
+          <li>Data collector for industrial PLCs, packaged as a Windows service with setup wizard and signed self-updates</li>
+          <li>Controller alarms automatically open service tickets</li>
+          <li>Trends and connectivity history per device</li>
+          <li>Secure browser access to on-site machine interfaces, no VPN needed</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Service</span>
+        <h3>Tickets &amp; work reports</h3>
+        <ul>
+          <li>Ticketing with priorities, assignment, photos and comments</li>
+          <li>Template-driven work reports with PDF export</li>
+          <li>Visit scheduling and IO commissioning checklists</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Delivery</span>
+        <h3>Project plans</h3>
+        <ul>
+          <li>Task trees with dependencies that unlock work in order</li>
+          <li>Gantt timeline and rolled-up progress per stage</li>
+          <li>Phone-first view for installers on site</li>
+          <li>Report review and approval workflow</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">AI</span>
+        <h3>Assistant on company data</h3>
+        <ul>
+          <li>Tool-calling LLM agent that queries sites, devices, tickets, energy prices and weather</li>
+          <li>Proposed changes are staged and confirmed by the user before saving</li>
+          <li>Semantic search (RAG) that respects each user's access rights</li>
+          <li>Switchable between cloud models and local models on own GPU hardware, with usage budgets</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Customers</span>
+        <h3>Customer portal</h3>
+        <ul>
+          <li>Separate internet-facing app for the company's customers</li>
+          <li>Customers see only the sites granted to them</li>
+          <li>Service requests and two-way messaging with staff</li>
+          <li>Isolated from internal data down to the database role</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Collaboration</span>
+        <h3>Real-time teamwork</h3>
+        <ul>
+          <li>Direct and group chat with files, reactions, mentions and links to records</li>
+          <li>Notifications by inbox, email and push</li>
+          <li>Internal wiki with access control</li>
+          <li>Installable app with a desktop-style window workspace</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Engineering</span>
+        <h3>Energy &amp; design tools</h3>
+        <ul>
+          <li>Electricity spot prices at 15-minute resolution</li>
+          <li>Weather forecasts and history for every site</li>
+          <li>Ice-rink thermal design calculator with brine and refrigerant property tables (ammonia, glycols, ethanol)</li>
+          <li>PLC IO configuration generator</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Governance</span>
+        <h3>Security &amp; compliance</h3>
+        <ul>
+          <li>Hierarchical roles plus per-site and per-file access rules</li>
+          <li>Complete audit trail of data changes</li>
+          <li>Encrypted file storage and scoped, rate-limited API keys</li>
+          <li>AI-assisted security agent that reviews activity and writes daily reports</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Flow ===== -->
+  <section aria-labelledby="how">
+    <div class="sec-head">
+      <p class="eyebrow">How it fits together</p>
+      <h2 id="how">From the machine room to the browser</h2>
+      <p>A simplified view. Data comes in from the field and from external services, passes through one API that enforces permissions, and reaches each audience through its own front end.</p>
+    </div>
+    <div class="flow-scroll">
+      <div class="flow" role="img" aria-label="Field controllers and external data feed a central platform API, which serves the staff web app, the customer portal and the AI assistant.">
+        <div class="flow-col">
+          <p class="eyebrow">Inputs</p>
+          <div class="node"><b>Field controllers</b><small>PLCs at rinks and plants</small></div>
+          <div class="node"><b>Energy &amp; weather</b><small>Spot prices, forecasts</small></div>
+          <div class="node"><b>CRM</b><small>Customer records sync</small></div>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="flow-col">
+          <p class="eyebrow">Core</p>
+          <div class="node core">
+            <b>Platform API</b>
+            <small>Business logic, access control, audit trail, background workers, real-time events</small>
+            <ul><li>ASP.NET Core</li><li>PostgreSQL</li><li>SignalR</li><li>pgvector</li></ul>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="flow-col">
+          <p class="eyebrow">Audiences</p>
+          <div class="node"><b>Staff web app</b><small>Office, field technicians, management</small></div>
+          <div class="node"><b>Customer portal</b><small>Site owners and operators</small></div>
+          <div class="node"><b>AI assistant</b><small>Cloud or local language models</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Practices ===== -->
+  <section aria-labelledby="practice">
+    <div class="sec-head">
+      <p class="eyebrow">How it was built</p>
+      <h2 id="practice">Engineering practices</h2>
+    </div>
+    <div class="practices">
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div><h3>Security by default</h3><p>Every record read and write goes through row-level access checks. Restricted data looks like it does not exist. Sensitive personal data is masked in the UI. Security audits are staged, starting with the internet-facing surfaces.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>
+        <div><h3>Self-hosted operations</h3><p>The full containerised stack runs on on-premises hardware behind a hardened reverse proxy. Scripted deployments, versioned releases, encrypted backups and a beta environment mirrored from production.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/></svg>
+        <div><h3>Clear boundaries</h3><p>A shared domain library, an API that owns all writes, and front ends that only talk to the API. The customer app is a separate service with its own minimal database permissions.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1 1 0 0 0 .9 1.5h12.2A1 1 0 0 0 19 19l-5-10V3"/></svg>
+        <div><h3>Tested and observable</h3><p>Automated test suite in CI, a catalog of error codes that users can quote to support, incident tracking, usage telemetry and a live status panel.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8"/></svg>
+        <div><h3>Built with its users</h3><p>Features were shaped with technicians, project managers and office staff. The whole UI is localised in Finnish and English, with eight themes and a mobile-first view for field work.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+        <div><h3>AI-assisted development</h3><p>An agentic coding workflow backed by maintained architecture documentation, so that every change follows the same invariants and conventions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Stack ===== -->
+  <section aria-labelledby="stack">
+    <div class="sec-head">
+      <p class="eyebrow">Technology</p>
+      <h2 id="stack">Stack</h2>
+    </div>
+    <div class="stack">
+      <div>
+        <p class="eyebrow">Application</p>
+        <div class="chips"><span class="chip">C# / .NET 10</span><span class="chip">ASP.NET Core</span><span class="chip">Blazor</span><span class="chip">EF Core</span><span class="chip">SignalR</span><span class="chip">JavaScript</span><span class="chip">PWA</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">Data</p>
+        <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">Timeseries</span><span class="chip">Audit logging</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">AI &amp; integration</p>
+        <div class="chips"><span class="chip">Claude API</span><span class="chip">Ollama</span><span class="chip">RAG</span><span class="chip">Tool calling</span><span class="chip">Python</span><span class="chip">Beckhoff ADS</span><span class="chip">Microsoft Entra ID</span><span class="chip">REST APIs</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">Infrastructure</p>
+        <div class="chips"><span class="chip">Docker</span><span class="chip">Nginx</span><span class="chip">Linux</span><span class="chip">NVIDIA GPU</span><span class="chip">GitHub Actions</span><span class="chip">Bash</span><span class="chip">Node.js</span></div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="note">
+    <h3>About what is not shown</h3>
+    <p>This is a live internal system, so the page has no screenshots, source code or internal design details. I am happy to walk through the architecture and the decisions behind it in an interview.</p>
+  </aside>
+
+  <footer>
+    <a href="../">Kasper Kuirinlahti · CV</a>
+    <span>Case study · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>
