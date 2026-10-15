@@ -90,7 +90,10 @@ a { color: var(--brine); }
 
 /* ---------- Header ---------- */
 /* Language switch, same as the case study */
-.topline { display: flex; justify-content: flex-end; margin-bottom: -28px; font: 500 13px/1 var(--mono); }
+.topline { display: flex; justify-content: flex-end; align-items: center; gap: 16px; margin-bottom: -28px; font: 500 13px/1 var(--mono); }
+.pdf { color: var(--brine); text-decoration: none; padding: 6px 0; }
+.pdf::before { content: "↓ "; }
+.pdf:hover { text-decoration: underline; }
 .lang { display: flex; gap: 4px; }
 .lang a, .lang span { padding: 6px 8px; border-radius: 3px; }
 .lang a { color: var(--muted); text-decoration: none; }
