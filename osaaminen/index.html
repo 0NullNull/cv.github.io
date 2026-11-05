@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Osaaminen · Kasper Kuirinlahti</title>
+<meta name="description" content="Kasper Kuirinlahden tekninen osaaminen: full-stack .NET, tietokannat, tekoälyintegraatiot ja palvelinympäristöt.">
+<script>
+// Send visitors whose browser languages include no Finnish to the English page,
+// unless they already picked a language with the FI/EN switch.
+(function () {
+    var pref = null;
+    try { pref = localStorage.getItem("lang"); } catch (e) {}
+    if (pref === "fi") return;
+    var langs = navigator.languages || [navigator.language || "fi"];
+    var finnish = langs.some(function (l) { return /^fi\b/i.test(l); });
+    if (pref === "en" || !finnish) location.replace("en.html" + location.hash);
+})();
+</script>
+<link rel="alternate" hreflang="fi" href="./">
+<link rel="alternate" hreflang="en" href="en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;125,700;125,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="osaaminen.css">
+</head>
+<body>
+<main class="wrap">
+  <nav class="topbar" aria-label="Sivu">
+    <a href="../">← Takaisin CV:hen</a>
+    <div class="lang"><span aria-current="page">FI</span><a href="en.html" hreflang="en" lang="en" data-lang="en">EN</a></div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Osaaminen · Kasper Kuirinlahti</p>
+      <h1>Kokonaisia järjestelmiä <em>tietokannasta</em> käyttöliittymään.</h1>
+      <p class="lede">
+        Olen suunnitellut, rakentanut ja ylläpitänyt laajaa web-sovellusta yksin alusta loppuun.
+        Tällä sivulla kerron yleisellä tasolla, millaisia asioita osaan rakentaa ja miten teen työtä.
+      </p>
+      <div class="role">
+        <span>Full-stack-kehitys</span>
+        <span>Arkkitehtuuri</span>
+        <span>Ylläpito tuotannossa</span>
+      </div>
+    </div>
+
+    <aside class="plate" aria-label="Lyhyesti">
+      <div class="plate-head"><strong>Lyhyesti</strong><span>2026</span></div>
+      <dl>
+        <dt>Pääpino</dt><dd>.NET · Blazor</dd>
+        <dt>Tietokanta</dt><dd>PostgreSQL</dd>
+        <dt>Tekoäly</dt><dd>Claude API · Ollama</dd>
+        <dt>Ympäristö</dt><dd>Docker · Linux</dd>
+        <dt>Kielet</dt><dd>suomi · englanti</dd>
+      </dl>
+    </aside>
+  </header>
+
+  <!-- ===== Osa-alueet ===== -->
+  <section aria-labelledby="what">
+    <div class="sec-head">
+      <p class="eyebrow">Mitä osaan rakentaa</p>
+      <h2 id="what">Osa-alueet</h2>
+      <p>Olen tehnyt kaikkia näitä tuotantokäytössä olevaan järjestelmään, en vain harjoitusprojekteissa.</p>
+    </div>
+
+    <div class="caps">
+      <article class="cap">
+        <span class="cap-tag">Sovellukset</span>
+        <h3>Web-sovellukset .NETillä</h3>
+        <ul>
+          <li>Blazor-käyttöliittymät ja uudelleenkäytettävät komponentit</li>
+          <li>ASP.NET Core -rajapinnat ja niille tyypitetyt asiakaskirjastot</li>
+          <li>Reaaliaikaiset päivitykset SignalR:llä</li>
+          <li>Kaksikielinen käyttöliittymä, teemat ja mobiilinäkymät</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Data</span>
+        <h3>Tietokannat ja tietomallit</h3>
+        <ul>
+          <li>PostgreSQL-tietomallit ja EF Core -migraatiot</li>
+          <li>Muutosloki, joka kertoo kuka muutti mitä ja milloin</li>
+          <li>Aikasarjadata, tekstihaku ja vektorihaku</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Tekoäly</span>
+        <h3>Tekoälyintegraatiot</h3>
+        <ul>
+          <li>Työkaluja kutsuvat LLM-agentit omien rajapintojen päällä</li>
+          <li>RAG-haku, joka noudattaa käyttäjän käyttöoikeuksia</li>
+          <li>Pilvimallit ja paikallisesti ajettavat mallit</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Tietoturva</span>
+        <h3>Käyttöoikeudet ja tunnistautuminen</h3>
+        <ul>
+          <li>Rooli- ja rivitason käyttöoikeudet</li>
+          <li>Kertakirjautuminen (OpenID Connect) ja passkeys</li>
+          <li>Henkilötietojen huolellinen käsittely käyttöliittymässä</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Integraatiot</span>
+        <h3>Ulkoiset järjestelmät</h3>
+        <ul>
+          <li>REST-rajapintojen integraatiot ja synkronointi</li>
+          <li>Datankeruu teollisuusautomaatiosta Python-palvelulla</li>
+          <li>Sähköposti- ja push-ilmoitukset</li>
+        </ul>
+      </article>
+      <article class="cap">
+        <span class="cap-tag">Ympäristö</span>
+        <h3>Palvelimet ja julkaisut</h3>
+        <ul>
+          <li>Konttipohjainen ympäristö Docker Composella</li>
+          <li>Nginx käänteisvälityspalvelimena</li>
+          <li>Skriptatut julkaisut, palautukset ja varmuuskopiot</li>
+          <li>Valvonta ja erillinen testiympäristö</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Työtavat ===== -->
+  <section aria-labelledby="practice">
+    <div class="sec-head">
+      <p class="eyebrow">Miten teen työtä</p>
+      <h2 id="practice">Työtavat</h2>
+    </div>
+    <div class="practices">
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8"/></svg>
+        <div><h3>Käyttäjien kanssa</h3><p>Ominaisuudet syntyvät keskustelemalla niiden kanssa, jotka sovellusta käyttävät, ja niitä parannetaan palautteen perusteella.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div><h3>Tietoturva alusta asti</h3><p>Käyttöoikeudet tarkistetaan palvelimella jokaisessa luvussa ja muutoksessa, eikä niitä jätetä käyttöliittymän varaan.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/></svg>
+        <div><h3>Selkeät rajat</h3><p>Yksi yhteinen tietomalli ja yksi rajapinta liiketoimintalogiikalle, jota kaikki käyttöliittymät käyttävät.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1 1 0 0 0 .9 1.5h12.2A1 1 0 0 0 19 19l-5-10V3"/></svg>
+        <div><h3>Testit ja seuranta</h3><p>Automaattiset testit CI-putkessa, selkeät virhekoodit ja häiriöiden seuranta, jotta ongelmat löytyvät nopeasti.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>
+        <div><h3>Vastuu tuotannosta</h3><p>Julkaisen, valvon ja ylläpidän itse rakentamaani, joten suunnittelen jokaisen muutoksen myös palautettavaksi.</p></div>
+      </div>
+      <div class="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+        <div><h3>Tekoälyavusteinen kehitys</h3><p>Käytän agenttipohjaista kehitystä, jota ohjaa ylläpidetty arkkitehtuuridokumentaatio. Jokainen muutos käydään läpi ennen julkaisua.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Teknologiat ===== -->
+  <section aria-labelledby="stack">
+    <div class="sec-head">
+      <p class="eyebrow">Teknologia</p>
+      <h2 id="stack">Teknologiat</h2>
+    </div>
+    <div class="stack">
+      <div>
+        <p class="eyebrow">Sovellus</p>
+        <div class="chips"><span class="chip">C# / .NET</span><span class="chip">ASP.NET Core</span><span class="chip">Blazor</span><span class="chip">EF Core</span><span class="chip">SignalR</span><span class="chip">JavaScript</span><span class="chip">PWA</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">Data</p>
+        <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">TimescaleDB</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">Tekoäly ja integraatiot</p>
+        <div class="chips"><span class="chip">Claude API</span><span class="chip">Ollama</span><span class="chip">RAG</span><span class="chip">Tool calling</span><span class="chip">Python</span><span class="chip">REST-rajapinnat</span></div>
+      </div>
+      <div>
+        <p class="eyebrow">Infrastruktuuri</p>
+        <div class="chips"><span class="chip">Docker</span><span class="chip">Nginx</span><span class="chip">Linux</span><span class="chip">GitHub Actions</span><span class="chip">Bash</span></div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="note">
+    <h3>Miksi ei kuvia tai esimerkkejä työstä</h3>
+    <p>Työni on rakentaa työnantajan sisäistä järjestelmää, jonka yksityiskohdat, kuvat ja koodi ovat luottamuksellisia. Siksi kerron tässä osaamisestani yleisellä tasolla.</p>
+  </aside>
+
+  <footer>
+    <a href="../">Kasper Kuirinlahti · CV</a>
+    <span>2026</span>
+  </footer>
+
+</main>
+<script>
+    document.querySelectorAll("[data-lang]").forEach(function (a) {
+        a.addEventListener("click", function () {
+            try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {}
+        });
+    });
+</script>
+</body>
+</html>
