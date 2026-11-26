@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Kasper Kuirinlahti</title>
-    <meta name="description" content="Kasper Kuirinlahti – ohjelmistokehittäjä. Full-stack .NET, tietokannat, palvelinympäristöt ja tekoälyintegraatiot.">
+    <title>Kasper Kuirinlahti · Ohjelmistokehittäjä</title>
+    <meta name="description" content="Kasper Kuirinlahti – full-stack .NET -ohjelmistokehittäjä. Web-sovellukset, tietokannat, palvelimet, tietoturva ja tekoälyintegraatiot.">
+    <meta name="theme-color" content="#F6F4EF">
     <script>
-    // Send visitors whose browser languages include no Finnish to the English page,
-    // unless they already picked a language with the FI/EN switch.
     (function () {
+        try {
+            var t = localStorage.getItem("theme");
+            if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+        } catch (e) {}
+        if (/bot|crawl|spider|slurp|preview|facebookexternalhit|linkedin/i.test(navigator.userAgent)) return;
         var pref = null;
         try { pref = localStorage.getItem("lang"); } catch (e) {}
         if (pref === "fi") return;
@@ -17,221 +21,371 @@
         if (pref === "en" || !finnish) location.replace("en.html" + location.hash);
     })();
     </script>
-    <link rel="alternate" hreflang="fi" href="./">
-    <link rel="alternate" hreflang="en" href="en.html">
+    <link rel="canonical" href="https://kuirinlahti.dev/">
+    <link rel="alternate" hreflang="fi" href="https://kuirinlahti.dev/">
+    <link rel="alternate" hreflang="en" href="https://kuirinlahti.dev/en.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://kuirinlahti.dev/">
+    <meta property="og:title" content="Kasper Kuirinlahti · Ohjelmistokehittäjä">
+    <meta property="og:description" content="Vien ideat toimivaksi ohjelmistoksi — ja pidän ne käynnissä. Full-stack .NET, PostgreSQL, Docker, tietoturva ja tekoäly.">
+    <meta property="og:image" content="https://kuirinlahti.dev/images/og.png">
+    <meta property="og:locale" content="fi_FI">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;125,700;125,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="cv">
 
-    <nav class="topline" aria-label="Kieli">
-        <a class="pdf" href="Kasper_Kuirinlahti_CV.pdf" download>Lataa PDF</a>
-        <div class="lang"><span aria-current="page">FI</span><a href="en.html" hreflang="en" lang="en" data-lang="en">EN</a></div>
+<!-- =================================================================
+     Slide 1 — Lyhyt aloitusesittely
+     ================================================================= -->
+<header class="slide">
+    <nav class="topbar" aria-label="Päänavigaatio">
+        <a class="brand" href="#cv"><span class="brand-dot" aria-hidden="true"></span>Kasper Kuirinlahti</a>
+        <div class="nav-links">
+            <a class="hide-sm" href="#cv">CV</a>
+            <a href="osaaminen/">Osaaminen</a>
+            <div class="nav-controls">
+                <div class="lang"><span aria-current="page">FI</span><a href="en.html" hreflang="en" lang="en" data-lang="en">EN</a></div>
+                <button class="theme-btn" type="button" id="themeToggle" aria-label="Vaihda teema">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <!-- ===== Otsake ===== -->
-    <header class="head">
-        <img src="images/kuva.png" class="photo" alt="Kasper Kuirinlahti" width="601" height="625">
-        <div class="head-text">
-            <h1>Kasper Kuirinlahti</h1>
-            <p class="title">Ohjelmistokehittäjä</p>
-            <p class="tagline">Full-stack .NET · tietokannat · palvelinympäristöt · tekoälyintegraatiot</p>
-            <ul class="contact">
-                <li><span class="k">Email</span><a href="mailto:kasper@kuirinlahti.dev">kasper@kuirinlahti.dev</a></li>
-                <li><span class="k">GitHub</span><a href="https://github.com/0NullNull">github.com/0NullNull</a></li>
-                <li><span class="k">Sijainti</span><span>Parkano, Pirkanmaa</span></li>
-                <li class="print-only"><span class="k">Verkossa</span><span>kuirinlahti.dev</span></li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="cols">
-
-        <!-- ===== Pääsisältö ===== -->
-        <div class="main">
-
-            <section aria-labelledby="profiili">
-                <h2 id="profiili">Profiili</h2>
-                <p class="profile">
-                    Ohjelmistokehittäjä, joka on suunnitellut ja rakentanut tuotantokäytössä olevan, laajan
-                    toiminnanohjausalustan alusta loppuun: käyttöliittymästä ja rajapinnoista tietokantaan,
-                    palvelinympäristöön ja tekoälyintegraatioihin. Teen mielelläni kokonaisuuksia, joissa
-                    tekniikka palvelee oikeaa työtä, ja opin uutta nopeasti.
-                </p>
-                <p class="profile">
-                    Olen laaja-alainen kehittäjä, ja nyt haluan syventyä yhteen alueeseen ja kasvaa sen
-                    asiantuntijaksi kokeneempien kehittäjien rinnalla.
-                </p>
-                <p class="seeking"><span class="k">Haen</span> ohjelmistokehittäjän tehtäviä Pirkanmaalla tai etänä.</p>
-                <a class="feature" href="osaaminen/">
-                    <span class="feature-tag">Osaaminen</span>
-                    <span class="feature-title">Mitä osaan rakentaa</span>
-                    <span class="feature-cta">Lue lisää &rarr;</span>
-                    <span class="print-only feature-url">kuirinlahti.dev/osaaminen/</span>
-                </a>
-            </section>
-
-            <section aria-labelledby="kokemus">
-                <h2 id="kokemus">Työkokemus</h2>
-
-                <article class="job">
-                    <div class="job-head">
-                        <h3>Ohjelmistokehittäjä</h3>
-                        <span class="when">11/2025&ndash;</span>
-                    </div>
-                    <p class="where">Suomen Tekojää Oy · jäähallit, lämpöpumput ja kylmätekniikka</p>
-                    <p class="job-intro">Suunnittelin ja rakensin yrityksen sisäisen toiminnanohjausalustan, joka on päivittäisessä tuotantokäytössä. Vastaan sen kehityksestä ja ylläpidosta.</p>
-
-                    <ul class="subs">
-                        <li class="cat-core">
-                            <b>Toiminnanohjausalusta</b><span class="tech">.NET 10 · Blazor · PostgreSQL</span>
-                            <span>Laitekanta, huolto ja työraportit, projektinhallinta, chat ja ilmoitukset.</span>
-                        </li>
-                        <li class="cat-integr">
-                            <b>PLC-datankeruuohjelma</b><span class="tech">Python · Windows-palvelu</span>
-                            <span>Kerää dataa teollisuusohjaimilta ja välittää sen alustalle.</span>
-                        </li>
-                        <li class="cat-ai">
-                            <b>Tekoälyavustaja</b><span class="tech">Claude API · Ollama · RAG</span>
-                            <span>Hakee ja käsittelee yrityksen omaa dataa käyttäjän käyttöoikeuksien rajoissa.</span>
-                        </li>
-                        <li class="cat-core">
-                            <b>Asiakasportaali</b><span class="tech">ASP.NET Core</span>
-                            <span>Erillinen sovellus yrityksen asiakkaille.</span>
-                        </li>
-                        <li class="cat-infra">
-                            <b>Palvelinympäristö</b><span class="tech">Docker · Nginx · Linux</span>
-                            <span>Julkaisut, varmuuskopiot, valvonta ja tietoturva.</span>
-                        </li>
-                    </ul>
-
-                </article>
-
-                <article class="job">
-                    <div class="job-head">
-                        <h3>Tilaustyöprojektit</h3>
-                        <span class="when">2021&ndash;2024</span>
-                    </div>
-                    <p class="where">Opintojen aikana</p>
-                    <ul>
-                        <li>Pelejä paikallisille yrityksille tilaustyönä koulun kautta.</li>
-                    </ul>
-                </article>
-            </section>
-
-            <section aria-labelledby="projektit">
-                <h2 id="projektit">Omat projektit</h2>
-                <article class="job">
-                    <div class="job-head">
-                        <h3><a class="plain" href="https://fun.kuirinlahti.dev">fun.kuirinlahti.dev</a></h3>
-                        <span class="when">2026</span>
-                    </div>
-                    <p class="where">Harrasteprojekti · selainpelejä ja oma moninpelipalvelin · <a href="https://github.com/0NullNull/hittimeemi">lähdekoodi GitHubissa</a></p>
-                    <ul>
-                        <li>Pienten selainpelien sivusto: Hittimeemi tunnistuttaa suomalaisen meemin puolen sekunnin pätkästä, Reaktio on reaaliaikainen reaktiokisa kavereiden kesken.</li>
-                        <li>Yhteinen WebSocket-kirjasto ja oma pelipalvelin: huoneet koodeilla, paluu peliin sivun latauksen jälkeen, käyttäjätilit, tulostaulut ja ylläpitopaneeli.</li>
-                        <li>Julkaistu GitHub Pagesissa omalla verkkotunnuksella, tietosuojaseloste mukana.</li>
-                    </ul>
-                </article>
-            </section>
-
-            <section aria-labelledby="koulutus">
-                <h2 id="koulutus">Koulutus</h2>
-                <article class="job">
-                    <div class="job-head">
-                        <h3>Tieto- ja viestintätekniikan perustutkinto</h3>
-                        <span class="when">2021&ndash;2024</span>
-                    </div>
-                    <p class="where">Ohjelmistokehittäjä · Vuoksi</p>
-                </article>
-            </section>
-
-            <section aria-labelledby="luottamus">
-                <h2 id="luottamus">Luottamustehtävät</h2>
-                <ul class="rows">
-                    <li><span>Parkanon nuorisovaltuuston varapuheenjohtaja</span><span class="when">2019&ndash;2020</span></li>
-                </ul>
-            </section>
+    <div class="slide-main">
+        <div class="slide-copy">
+            <p class="status-pill">Parkano · Pirkanmaa &amp; etätyö</p>
+            <h1 class="headline">Vien ideat toimivaksi ohjelmistoksi — <em>ja pidän ne käynnissä.</em></h1>
+            <p class="intro">
+                Olen Kasper, ohjelmistokehittäjä Parkanosta. Rakennan web-sovelluksia käyttöliittymästä
+                tietokantaan ja palvelimiin asti — <strong>ja opettelen mielelläni uusia teknologioita,
+                kokeilen erilaisia ratkaisuja ja kehitän tapaani tehdä työtä.</strong>
+            </p>
+            <div class="actions">
+                <a class="btn btn-dark" href="#cv">Katso portfolio &amp; CV <span aria-hidden="true">↓</span></a>
+                <a class="btn btn-outline" href="mailto:kasper@kuirinlahti.dev">kasper@kuirinlahti.dev</a>
+            </div>
         </div>
 
-        <!-- ===== Sivupalkki ===== -->
-        <aside class="side">
-
-            <section class="cat-core" aria-labelledby="paivittain">
-                <h2 id="paivittain">Päivittäinen käyttö</h2>
-                <div class="chips">
-                    <span>C#</span><span>.NET / ASP.NET Core</span><span>Blazor</span><span>Entity Framework</span><span>PostgreSQL</span><span>JavaScript</span><span>HTML / CSS</span><span>Docker</span><span>Linux</span><span>Git</span>
-                </div>
-            </section>
-
-            <section class="cat-core outline" aria-labelledby="kokemusta">
-                <h2 id="kokemusta">Kokemusta</h2>
-                <div class="chips">
-                    <span>Python</span><span>C++</span><span>SignalR</span><span>TimescaleDB</span><span>REST-rajapinnat</span>
-                </div>
-            </section>
-
-            <section class="cat-ai" aria-labelledby="tekoaly">
-                <h2 id="tekoaly">Tekoäly</h2>
-                <div class="chips">
-                    <span>Claude API</span><span>Ollama</span><span>RAG / pgvector</span><span>LLM-agentit</span><span>Tekoälyavusteinen kehitys</span>
-                </div>
-            </section>
-
-            <section class="cat-tools" aria-labelledby="kehitystyokalut">
-                <h2 id="kehitystyokalut">Kehitystyökalut</h2>
-                <div class="chips">
-                    <span>Visual Studio</span><span>VS Code</span><span>Claude Code</span><span>GitHub</span><span>GitHub Actions</span><span>pgAdmin</span><span>xUnit</span>
-                </div>
-            </section>
-
-            <section class="cat-infra" aria-labelledby="palvelimet">
-                <h2 id="palvelimet">Palvelimet ja tietoturva</h2>
-                <div class="chips">
-                    <span>Docker Compose</span><span>Nginx</span><span>YARP</span><span>TLS / oma varmentaja (CA)</span><span>pgAudit</span>
-                </div>
-            </section>
-
-            <section class="cat-integr" aria-labelledby="integraatiot">
-                <h2 id="integraatiot">Integraatiot</h2>
-                <div class="chips">
-                    <span>Beckhoff TwinCAT / ADS</span><span>Microsoft Entra ID &amp; Graph</span><span>Pipedrive API</span><span>Google Maps API</span><span>Web Push</span><span>WebAuthn / passkeys</span><span>PyInstaller</span>
-                </div>
-            </section>
-
-            <section class="cat-other" aria-labelledby="ohjelmistot">
-                <h2 id="ohjelmistot">Muut ohjelmistot</h2>
-                <div class="chips">
-                    <span>Photoshop</span><span>DaVinci Resolve</span><span>Word &amp; Excel</span>
-                </div>
-            </section>
-
-            <section class="cat-other" aria-labelledby="kielet">
-                <h2 id="kielet">Kielet</h2>
-                <ul class="rows">
-                    <li><span>Suomi</span><span class="when">äidinkieli</span></li>
-                    <li><span>Englanti</span><span class="when">erinomainen</span></li>
-                </ul>
-            </section>
-
-            <section class="cat-other" aria-labelledby="muuta">
-                <h2 id="muuta">Muuta</h2>
-                <ul class="rows">
-                    <li><span>B-ajokortti</span><span class="when">oma auto</span></li>
-                </ul>
-            </section>
-        </aside>
+        <figure class="portrait-card">
+            <div class="portrait-frame">
+                <img src="images/kuva.png" alt="Kasper Kuirinlahti" width="601" height="625">
+            </div>
+            <figcaption class="portrait-meta">
+                <strong>Kasper Kuirinlahti</strong>
+                <span>Ohjelmistokehittäjä</span>
+            </figcaption>
+        </figure>
     </div>
+
+    <div class="slide-foot">
+        <ul class="facts" aria-label="Mitä teen">
+            <li><b>Full-stack .NET</b><span>C#, ASP.NET Core, Blazor, PostgreSQL ja moderni web</span></li>
+            <li><b>Palvelimet &amp; tietoturva</b><span>Docker, Linux, Nginx, julkaisut, varmuuskopiot ja valvonta</span></li>
+            <li><b>Integraatiot &amp; laitteet</b><span>REST-rajapinnat, teollisuusautomaation PLC-data ja pilvipalvelut</span></li>
+            <li><b>Tekoäly &amp; oppiminen</b><span>LLM-työkalut, RAG ja jatkuva uusien tekniikoiden opiskelu</span></li>
+        </ul>
+        <a class="scroll-hint" href="#cv">
+            <span>Koko portfolio</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+    </div>
+</header>
+
+<!-- =================================================================
+     Koko portfolio & CV
+     ================================================================= -->
+<main class="portfolio" id="cv" tabindex="-1">
+
+    <!-- 01 Profiili -->
+    <section class="chapter" aria-labelledby="ch-profiili">
+        <div class="chapter-label">
+            <span class="chapter-num">01</span>
+            <h2 id="ch-profiili">Profiili</h2>
+            <p>Kuka olen ja mitä seuraavaksi haen.</p>
+        </div>
+        <div class="chapter-body">
+            <p class="lead-text">
+                Ohjelmistokehittäjä, joka suunnittelee, rakentaa ja ylläpitää nykyisessä työssään yrityksen
+                sisäistä toiminnanohjausalustaa pääkehittäjänä: käyttöliittymän, rajapinnat, tietokannan,
+                palvelinympäristön, tietoturvan, teollisuuslaiteintegraation ja tekoälyominaisuudet.
+            </p>
+            <p class="body-text">
+                Pidän kokonaisuuksien rakentamisesta ja siitä, että tekniikka ratkaisee oikeita ongelmia.
+                Olen tehnyt töitä laaja-alaisesti yksin, ja seuraavaksi haluaisin tiimiin, jossa pääsen
+                jakamaan osaamistani, oppimaan muilta ja syventymään yhteen alueeseen.
+            </p>
+            <div class="meta-row">
+                <span class="meta-chip"><strong>Haen</strong> ohjelmistokehittäjän tehtäviä Pirkanmaalla tai etänä</span>
+                <a class="meta-chip" href="https://github.com/0NullNull"><strong>GitHub</strong> github.com/0NullNull ↗</a>
+            </div>
+            <a class="banner-link" href="osaaminen/">
+                <span>
+                    <span class="banner-kicker">Syvempi katsaus</span>
+                    <span class="banner-title">Mitä osaan rakentaa ja miten teen työtä</span>
+                    <span class="print-only">kuirinlahti.dev/osaaminen/</span>
+                </span>
+                <span class="banner-cta">Avaa osaamissivu →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 02 Työkokemus -->
+    <section class="chapter" aria-labelledby="ch-kokemus">
+        <div class="chapter-label">
+            <span class="chapter-num">02</span>
+            <h2 id="ch-kokemus">Työkokemus</h2>
+            <p>Järjestelmät ja projektit, joita olen rakentanut.</p>
+        </div>
+        <div class="chapter-body">
+            <article class="role-card">
+                <div class="role-top">
+                    <div>
+                        <h3>Ohjelmistokehittäjä</h3>
+                        <p class="role-company">Suomen Tekojää Oy · jäähallit, lämpöpumput ja kylmätekniikka</p>
+                    </div>
+                    <span class="date-pill">11/2025 — nykyinen</span>
+                </div>
+                <p class="body-text">
+                    Suunnittelen ja rakennan yrityksen sisäistä toiminnanohjausalustaa ja vastaan sen
+                    julkaisuista, palvelimista ja tietoturvasta. Alusta on tuotantoympäristössä
+                    ensimmäisten käyttäjien käytössä ja sitä otetaan käyttöön vaiheittain.
+                </p>
+                <div class="bento">
+                    <div class="bento-item wide">
+                        <div class="bento-head">
+                            <h4>Toiminnanohjausalusta</h4>
+                            <span class="bento-tech">.NET 10 · Blazor · PostgreSQL</span>
+                        </div>
+                        <p>Laitekanta, huolto ja työraportit, projektit ja Gantt, tiedostot, chat ja ilmoitukset. Kaksikielinen PWA, rooli- ja kohdekohtaiset käyttöoikeudet.</p>
+                    </div>
+                    <div class="bento-item">
+                        <div class="bento-head">
+                            <h4>PLC-datankeruu</h4>
+                            <span class="bento-tech">Python · Beckhoff ADS</span>
+                        </div>
+                        <p>Windows-palvelu teollisuus-PC:ille: lukee ohjaimia ja lähettää datan allekirjoitettuna ja salattuna. Hälytykset avaavat huoltotiketit automaattisesti.</p>
+                    </div>
+                    <div class="bento-item">
+                        <div class="bento-head">
+                            <h4>Tekoälyavustaja</h4>
+                            <span class="bento-tech">Claude API · Ollama · RAG</span>
+                        </div>
+                        <p>Työkaluja kutsuva avustaja ja dokumenttihaku yrityksen omaan dataan, aina käyttäjän käyttöoikeuksien rajoissa.</p>
+                    </div>
+                    <div class="bento-item">
+                        <div class="bento-head">
+                            <h4>Asiakasportaali</h4>
+                            <span class="bento-tech">ASP.NET Core</span>
+                        </div>
+                        <p>Erillinen sovellus yrityksen asiakkaille: rajatut tietokantanäkymät ilman pääsyä henkilöstön dataan.</p>
+                    </div>
+                    <div class="bento-item">
+                        <div class="bento-head">
+                            <h4>Palvelimet ja tietoturva</h4>
+                            <span class="bento-tech">Docker · Nginx · Linux</span>
+                        </div>
+                        <p>Oma konttipohjainen palvelinympäristö: skriptatut julkaisut palautuksella, varmuuskopiot, valvonta, hälytykset ja tietoturva.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="past-row">
+                <div>
+                    <h3>Tilaustyöprojektit</h3>
+                    <p>Opintojen aikana · Pelejä paikallisille yrityksille tilaustyönä koulun kautta.</p>
+                </div>
+                <span class="date-pill">2021 — 2024</span>
+            </article>
+        </div>
+    </section>
+
+    <!-- 03 Tekninen osaaminen -->
+    <section class="chapter" aria-labelledby="ch-taidot">
+        <div class="chapter-label">
+            <span class="chapter-num">03</span>
+            <h2 id="ch-taidot">Teknologiat</h2>
+            <p>Työkalut ja teknologiat, joilla rakennan ja ylläpidän järjestelmiä.</p>
+        </div>
+        <div class="chapter-body">
+            <div class="skill-grid">
+                <div class="skill-card primary">
+                    <h3>Päivittäin</h3>
+                    <div class="tags">
+                        <span>C#</span><span>.NET / ASP.NET Core</span><span>Blazor</span><span>Entity Framework</span><span>SignalR</span><span>PostgreSQL</span><span>JavaScript</span><span>HTML / CSS</span><span>Git</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Myös tuotannossa</h3>
+                    <div class="tags">
+                        <span>Python</span><span>Bash</span><span>Node.js</span><span>FastAPI</span><span>TimescaleDB</span><span>pgvector</span><span>xUnit</span><span>GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Palvelimet &amp; tietoturva</h3>
+                    <div class="tags">
+                        <span>Docker Compose</span><span>Linux</span><span>Nginx</span><span>YARP</span><span>TLS / oma CA</span><span>pgAudit</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tekoäly</h3>
+                    <div class="tags">
+                        <span>Claude API</span><span>Tool calling</span><span>Ollama</span><span>RAG</span><span>Tekoälyavusteinen kehitys</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Integraatiot</h3>
+                    <div class="tags">
+                        <span>Beckhoff TwinCAT / ADS</span><span>Entra ID &amp; Graph</span><span>Teams-botti</span><span>Pipedrive API</span><span>Google Maps API</span><span>Web Push</span><span>WebAuthn / passkeys</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Työkalut</h3>
+                    <div class="tags">
+                        <span>Visual Studio</span><span>VS Code</span><span>Claude Code</span><span>pgAdmin</span><span>Photoshop</span><span>DaVinci Resolve</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 Omat projektit -->
+    <section class="chapter" aria-labelledby="ch-projektit">
+        <div class="chapter-label">
+            <span class="chapter-num">04</span>
+            <h2 id="ch-projektit">Omat projektit</h2>
+            <p>Julkinen koodi ja vapaa-ajan projektit.</p>
+        </div>
+        <div class="chapter-body">
+            <article class="project-card">
+                <div class="project-top">
+                    <div>
+                        <h3>fun.kuirinlahti.dev</h3>
+                        <p class="project-sub">Selainpelejä ja oma moninpelipalvelin · 2026</p>
+                    </div>
+                    <div class="project-links">
+                        <a class="pill-link" href="https://fun.kuirinlahti.dev">Avaa sivusto ↗</a>
+                        <a class="pill-link" href="https://github.com/0NullNull/hittimeemi">GitHub ↗</a>
+                    </div>
+                </div>
+                <ul class="project-list">
+                    <li>Pienten selainpelien sivusto: Hittimeemi tunnistuttaa suomalaisen meemin puolen sekunnin pätkästä, Reaktio on reaaliaikainen reaktiokisa kavereiden kesken.</li>
+                    <li>Yhteinen WebSocket-kirjasto ja oma pelipalvelin: huoneet koodeilla, paluu peliin sivun latauksen jälkeen, käyttäjätilit, tulostaulut ja ylläpitopaneeli.</li>
+                    <li>Julkaistu GitHub Pagesissa omalla verkkotunnuksella, tietosuojaseloste mukana.</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- 05 Tausta -->
+    <section class="chapter" aria-labelledby="ch-tausta">
+        <div class="chapter-label">
+            <span class="chapter-num">05</span>
+            <h2 id="ch-tausta">Tausta &amp; tiedot</h2>
+            <p>Koulutus, kielitaito ja perustiedot.</p>
+        </div>
+        <div class="chapter-body">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Koulutus</h3>
+                    <p class="big">Tieto- ja viestintätekniikan perustutkinto</p>
+                    <p class="sub">Ohjelmistokehittäjä · Vuoksi · 2021–2024</p>
+                </div>
+                <div class="info-card">
+                    <h3>Kielet &amp; muuta</h3>
+                    <ul class="kv">
+                        <li><span>Suomi</span><span class="v">äidinkieli</span></li>
+                        <li><span>Englanti</span><span class="v">erinomainen</span></li>
+                        <li><span>B-ajokortti</span><span class="v">oma auto</span></li>
+                        <li><span>Parkanon nuorisovaltuusto, vpj</span><span class="v">2019–2020</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yhteydenotto -->
+    <section class="contact-strip" aria-label="Yhteystiedot">
+        <div>
+            <h2>Kiinnostuitko? <em>Laita viestiä.</em></h2>
+            <p>Kerron mielelläni lisää projekteistani ja tavastani tehdä työtä. Puhelinnumeron annan pyydettäessä sähköpostitse.</p>
+        </div>
+        <div class="actions">
+            <a class="btn btn-dark" href="mailto:kasper@kuirinlahti.dev">kasper@kuirinlahti.dev</a>
+            <a class="btn btn-outline" href="https://github.com/0NullNull">GitHub ↗</a>
+        </div>
+    </section>
+
 </main>
+
+<footer class="site-foot">
+    <span>Kasper Kuirinlahti · kuirinlahti.dev</span>
+    <a href="#">Takaisin ylös ↑</a>
+</footer>
+
 <script>
     document.querySelectorAll("[data-lang]").forEach(function (a) {
         a.addEventListener("click", function () {
             try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {}
         });
     });
+    document.getElementById("themeToggle").addEventListener("click", function () {
+        var root = document.documentElement;
+        var dark = root.dataset.theme === "dark" ||
+            (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = dark ? "light" : "dark";
+        root.dataset.theme = next;
+        try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+
+    // One scroll down glides completely off the start slide onto #cv,
+    // and scrolling up at the very top of #cv glides back to the start slide.
+    (function () {
+        var slide = document.querySelector(".slide");
+        var cv = document.getElementById("cv");
+        if (!slide || !cv) return;
+        var lockedUntil = 0;
+        var lastWheel = 0;
+        var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        function jumpTo(y) {
+            lockedUntil = Date.now() + 700;
+            window.scrollTo({ top: y, behavior: reduced ? "auto" : "smooth" });
+        }
+        window.addEventListener("wheel", function (e) {
+            if (Math.abs(e.deltaY) < 4) return;
+            var now = Date.now();
+            var freshGesture = now - lastWheel > 250;
+            lastWheel = now;
+            if (now < lockedUntil) { e.preventDefault(); return; }
+            var y = window.scrollY;
+            var cvTop = cv.offsetTop;
+            var slideBottom = slide.getBoundingClientRect().bottom;
+            if (e.deltaY > 0 && y < cvTop - 20 && slideBottom <= window.innerHeight + 24) {
+                e.preventDefault();
+                jumpTo(cvTop);
+            } else if (e.deltaY < 0 && y > 0 && (y < cvTop - 4 || (y <= cvTop + 12 && freshGesture))) {
+                e.preventDefault();
+                jumpTo(0);
+            }
+        }, { passive: false });
+        window.addEventListener("keydown", function (e) {
+            if (e.metaKey || e.ctrlKey || e.altKey) return;
+            var y = window.scrollY;
+            var cvTop = cv.offsetTop;
+            if ((e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") && y < 20) {
+                e.preventDefault();
+                jumpTo(cvTop);
+            } else if ((e.key === "ArrowUp" || e.key === "PageUp") && y >= cvTop - 12 && y <= cvTop + 12) {
+                e.preventDefault();
+                jumpTo(0);
+            }
+        });
+    })();
 </script>
 </body>
 </html>

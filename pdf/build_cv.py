@@ -46,16 +46,16 @@ for name, file in {
 }.items():
     pdfmetrics.registerFont(TTFont(name, str(FONTS / file)))
 
-# Same palette as style.css (light theme)
-INK, MUTED, LINE = HexColor("#13212B"), HexColor("#55656F"), HexColor("#D3DCE0")
-BRINE, AMBER, PAPER = HexColor("#24617D"), HexColor("#B67A06"), HexColor("#FFFFFF")
+# Warm Nordic Editorial palette (matches style.css)
+INK, MUTED, LINE = HexColor("#171614"), HexColor("#6A665E"), HexColor("#E2DDD4")
+BRINE, AMBER, PAPER = HexColor("#171614"), HexColor("#D44724"), HexColor("#FFFFFF")
 CAT = {
-    "core":   (HexColor("#24617D"), HexColor("#E2EEF4")),
-    "ai":     (HexColor("#6A4DA6"), HexColor("#EEE8F8")),
-    "integr": (HexColor("#2B7A4B"), HexColor("#E1F1E7")),
-    "infra":  (HexColor("#9A5A00"), HexColor("#F7EBD6")),
-    "tools":  (HexColor("#4B5A78"), HexColor("#E7EAF1")),
-    "other":  (HexColor("#5A676E"), HexColor("#ECEFF1")),
+    "core":   (HexColor("#D44724"), HexColor("#F6F4EF")),
+    "ai":     (HexColor("#1E5643"), HexColor("#E5F1EC")),
+    "integr": (HexColor("#1E5643"), HexColor("#F6F4EF")),
+    "infra":  (HexColor("#8C4A1C"), HexColor("#F6F4EF")),
+    "tools":  (HexColor("#3D3A35"), HexColor("#EDEAE2")),
+    "other":  (HexColor("#6A665E"), HexColor("#F6F4EF")),
 }
 
 W, H = A4
@@ -77,31 +77,36 @@ CONTENT = {
         "h": {"profile": "Profiili", "exp": "Työkokemus", "side": "Omat projektit", "edu": "Koulutus",
               "trust": "Luottamustehtävät"},
         "profile": [
-            "Ohjelmistokehittäjä, joka on suunnitellut ja rakentanut tuotantokäytössä olevan, laajan "
-            "toiminnanohjausalustan alusta loppuun: käyttöliittymästä ja rajapinnoista tietokantaan, "
-            "palvelinympäristöön ja tekoälyintegraatioihin. Teen mielelläni kokonaisuuksia, joissa "
-            "tekniikka palvelee oikeaa työtä, ja opin uutta nopeasti.",
-            "Olen laaja-alainen kehittäjä, ja nyt haluan syventyä yhteen alueeseen ja kasvaa sen "
-            "asiantuntijaksi kokeneempien kehittäjien rinnalla.",
+            "Ohjelmistokehittäjä, joka suunnittelee, rakentaa ja ylläpitää nykyisessä työssään yrityksen "
+            "sisäistä toiminnanohjausalustaa pääkehittäjänä: käyttöliittymän, rajapinnat, tietokannan, "
+            "palvelinympäristön, tietoturvan, teollisuuslaiteintegraation ja tekoälyominaisuudet. "
+            "Pidän kokonaisuuksien rakentamisesta ja siitä, että tekniikka ratkaisee oikeita ongelmia.",
+            "Olen tehnyt töitä laaja-alaisesti yksin, ja seuraavaksi haluaisin tiimiin, jossa pääsen "
+            "jakamaan osaamistani, oppimaan muilta ja syventymään yhteen alueeseen.",
         ],
         "seeking": ("Haen", "ohjelmistokehittäjän tehtäviä Pirkanmaalla tai etänä."),
         "job": {
             "title": "Ohjelmistokehittäjä", "when": "11/2025–",
             "where": "Suomen Tekojää Oy · jäähallit, lämpöpumput ja kylmätekniikka",
-            "intro": "Suunnittelin ja rakensin yrityksen sisäisen toiminnanohjausalustan, joka on päivittäisessä "
-                     "tuotantokäytössä. Vastaan sen "
-                     "kehityksestä ja ylläpidosta.",
-                        "subs": [
+            "intro": "Suunnittelen ja rakennan yrityksen sisäistä toiminnanohjausalustaa ja vastaan sen julkaisuista, "
+                     "palvelimista ja tietoturvasta. Alusta on tuotantoympäristössä ensimmäisten käyttäjien "
+                     "käytössä ja sitä otetaan käyttöön vaiheittain.",
+            "stats": [(".NET 10", "Blazor, ASP.NET Core ja PostgreSQL"),
+                      ("~2 000", "automaattista testiä CI-putkessa"),
+                      ("Docker & Linux", "Nginx, julkaisut, varmuuskopiot ja valvonta")],
+            "subs": [
                 ("core", "Toiminnanohjausalusta", ".NET 10 · Blazor · PostgreSQL",
-                 "Laitekanta, huolto ja työraportit, projektinhallinta, chat ja ilmoitukset."),
-                ("integr", "PLC-datankeruuohjelma", "Python · Windows-palvelu",
-                 "Kerää dataa teollisuusohjaimilta ja välittää sen alustalle."),
+                 "Laitekanta, huolto ja työraportit, projektit, tiedostot, chat ja ilmoitukset. "
+                 "Kaksikielinen PWA, rooli- ja kohdekohtaiset käyttöoikeudet."),
+                ("integr", "PLC-datankeruu", "Python · Beckhoff ADS",
+                 "Lukee teollisuusohjaimia ja lähettää datan allekirjoitettuna ja salattuna. "
+                 "Hälytykset avaavat huoltotiketit automaattisesti."),
                 ("ai", "Tekoälyavustaja", "Claude API · Ollama · RAG",
-                 "Hakee ja käsittelee yrityksen omaa dataa käyttäjän käyttöoikeuksien rajoissa."),
+                 "Työkaluja kutsuva avustaja ja dokumenttihaku, aina käyttäjän käyttöoikeuksien rajoissa."),
                 ("core", "Asiakasportaali", "ASP.NET Core",
-                 "Erillinen sovellus yrityksen asiakkaille."),
-                ("infra", "Palvelinympäristö", "Docker · Nginx · Linux",
-                 "Julkaisut, varmuuskopiot, valvonta ja tietoturva."),
+                 "Erillinen sovellus asiakkaille, rajatut näkymät ilman pääsyä henkilöstön dataan."),
+                ("infra", "Palvelimet ja tietoturva", "Docker · Nginx · Linux",
+                 "Konttipohjainen ympäristö, julkaisut palautuksella, varmuuskopiot, valvonta."),
             ],
             "case": ("Projektiesittely", "Kenttätoimintojen alusta",
                      "", SITE + "/showcase/"),
@@ -115,23 +120,23 @@ CONTENT = {
         "edu": ("Tieto- ja viestintätekniikan perustutkinto", "2021–2024", "Ohjelmistokehittäjä · Vuoksi"),
         "trust": [("Parkanon nuorisovaltuuston varapuheenjohtaja", "2019–2020")],
         "groups": [
-            ("core", "Päivittäinen käyttö", False, ["C#", ".NET / ASP.NET Core", "Blazor", "Entity Framework",
-                                                    "PostgreSQL", "JavaScript", "HTML / CSS", "Docker", "Linux", "Git"]),
-            ("core", "Kokemusta", True, ["Python", "C++", "SignalR", "TimescaleDB", "REST-rajapinnat"]),
-            ("ai", "Tekoäly", False, ["Claude API", "Ollama", "RAG / pgvector", "LLM-agentit",
+            ("core", "Päivittäin", False, ["C#", ".NET / ASP.NET Core", "Blazor", "Entity Framework",
+                                           "SignalR", "PostgreSQL", "JavaScript", "HTML / CSS", "Git"]),
+            ("tools", "Myös tuotannossa", False, ["Python", "Bash", "Node.js", "FastAPI", "TimescaleDB",
+                                                  "pgvector", "xUnit", "GitHub Actions"]),
+            ("infra", "Palvelimet ja tietoturva", False, ["Docker Compose", "Linux", "Nginx", "YARP",
+                                                          "TLS / oma CA", "pgAudit"]),
+            ("ai", "Tekoäly", False, ["Claude API", "Tool calling", "Ollama", "RAG",
                                      "Tekoälyavusteinen kehitys"]),
-            ("tools", "Kehitystyökalut", False, ["Visual Studio", "VS Code", "Claude Code", "GitHub",
-                                                "GitHub Actions", "pgAdmin", "xUnit"]),
-            ("infra", "Palvelimet ja tietoturva", False, ["Docker Compose", "Nginx", "YARP",
-                                                         "TLS / oma varmentaja (CA)", "pgAudit"]),
-            ("integr", "Integraatiot", False, ["Beckhoff TwinCAT / ADS", "Microsoft Entra ID & Graph",
+            ("integr", "Integraatiot", False, ["Beckhoff TwinCAT / ADS", "Entra ID & Graph", "Teams-botti",
                                               "Pipedrive API", "Google Maps API", "Web Push",
-                                              "WebAuthn / passkeys", "PyInstaller"]),
-            ("other", "Muut ohjelmistot", False, ["Photoshop", "DaVinci Resolve", "Word & Excel"]),
+                                              "WebAuthn / passkeys"]),
+            ("other", "Työkalut", False, ["Visual Studio", "VS Code", "Claude Code", "pgAdmin", "Photoshop",
+                                         "DaVinci Resolve"]),
         ],
         "rows": [("Kielet", [("Suomi", "äidinkieli"), ("Englanti", "erinomainen")]),
                  ("Muuta", [("B-ajokortti", "oma auto")])],
-        "footer": ("Verkossa", SITE, "Päivitetty 10/2026"),
+        "footer": ("Verkossa", SITE, "Päivitetty 11/2026"),
         "legend": "täytetty = päivittäin · ääriviiva = kokemusta",
     },
     "en": {
@@ -145,31 +150,36 @@ CONTENT = {
         "h": {"profile": "Profile", "exp": "Experience", "side": "Side projects", "edu": "Education",
               "trust": "Positions of trust"},
         "profile": [
-            "Software developer who designed and built a large operations platform that is in daily "
-            "production use, end to end: from the user interface and APIs to the database, server "
-            "infrastructure and AI integrations. I enjoy building systems where technology supports "
-            "real work, and I learn new things quickly.",
-            "I am a generalist by experience, and now I want to go deep in one area and grow into "
-            "an expert in it alongside more experienced developers.",
+            "Software developer currently designing, building and maintaining a company's internal "
+            "operations platform as its main developer: the user interface, APIs, database, server "
+            "infrastructure, security, industrial device integration and AI features. I enjoy building "
+            "whole systems where technology solves real problems.",
+            "I have worked broadly on my own, and next I would like to join a team where I can share "
+            "what I have learned, learn from others and go deeper in one area.",
         ],
         "seeking": ("Looking for", "software developer roles in the Pirkanmaa region or remote."),
         "job": {
             "title": "Software Developer", "when": "11/2025–",
             "where": "Suomen Tekojää Oy · ice rinks, heat pumps and refrigeration",
-            "intro": "Designed and built the company's internal operations platform, which is in daily production "
-                     "use. I am responsible for its development "
-                     "and operation.",
-                        "subs": [
+            "intro": "I design and build the company's internal operations platform and handle its releases, servers "
+                     "and security. The platform is live in production with its first users and being rolled out "
+                     "gradually.",
+            "stats": [(".NET 10", "Blazor, ASP.NET Core and PostgreSQL"),
+                      ("~2,000", "automated tests in CI"),
+                      ("Docker & Linux", "Nginx, releases, backups and monitoring")],
+            "subs": [
                 ("core", "Operations platform", ".NET 10 · Blazor · PostgreSQL",
-                 "Equipment registry, service and work reports, project management, chat and notifications."),
-                ("integr", "PLC data collector", "Python · Windows service",
-                 "Collects data from industrial controllers and passes it to the platform."),
+                 "Equipment registry, service and work reports, projects, files, chat and notifications. "
+                 "Bilingual PWA with role- and site-level permissions."),
+                ("integr", "PLC data collection", "Python · Beckhoff ADS",
+                 "Reads industrial controllers and sends the data signed and encrypted. "
+                 "Alarms open service tickets automatically."),
                 ("ai", "AI assistant", "Claude API · Ollama · RAG",
-                 "Finds and works with company data within each user's access rights."),
+                 "Tool-calling assistant and document search, always within the user's access rights."),
                 ("core", "Customer portal", "ASP.NET Core",
-                 "Separate app for the company's customers."),
-                ("infra", "Server infrastructure", "Docker · Nginx · Linux",
-                 "Deployments, backups, monitoring and security."),
+                 "Separate app for customers, with restricted views and no access to staff data."),
+                ("infra", "Servers and security", "Docker · Nginx · Linux",
+                 "Container environment, scripted releases with rollback, backups, monitoring."),
             ],
             "case": ("Case study", "Field Operations Platform",
                      "", SITE + "/showcase/en.html"),
@@ -184,22 +194,21 @@ CONTENT = {
         "trust": [("Vice-chair, Parkano Youth Council", "2019–2020")],
         "groups": [
             ("core", "Daily use", False, ["C#", ".NET / ASP.NET Core", "Blazor", "Entity Framework",
-                                          "PostgreSQL", "JavaScript", "HTML / CSS", "Docker", "Linux", "Git"]),
-            ("core", "Experience with", True, ["Python", "C++", "SignalR", "TimescaleDB", "REST APIs"]),
-            ("ai", "AI", False, ["Claude API", "Ollama", "RAG / pgvector", "LLM agents",
-                                "AI-assisted development"]),
-            ("tools", "Development tools", False, ["Visual Studio", "VS Code", "Claude Code", "GitHub",
-                                                  "GitHub Actions", "pgAdmin", "xUnit"]),
-            ("infra", "Infrastructure & security", False, ["Docker Compose", "Nginx", "YARP",
-                                                          "TLS / private CA", "pgAudit"]),
-            ("integr", "Integrations", False, ["Beckhoff TwinCAT / ADS", "Microsoft Entra ID & Graph",
+                                          "SignalR", "PostgreSQL", "JavaScript", "HTML / CSS", "Git"]),
+            ("tools", "Also in production", False, ["Python", "Bash", "Node.js", "FastAPI", "TimescaleDB",
+                                                    "pgvector", "xUnit", "GitHub Actions"]),
+            ("infra", "Infrastructure & security", False, ["Docker Compose", "Linux", "Nginx", "YARP",
+                                                           "TLS / private CA", "pgAudit"]),
+            ("ai", "AI", False, ["Claude API", "Tool calling", "Ollama", "RAG", "AI-assisted development"]),
+            ("integr", "Integrations", False, ["Beckhoff TwinCAT / ADS", "Entra ID & Graph", "Teams bot",
                                               "Pipedrive API", "Google Maps API", "Web Push",
-                                              "WebAuthn / passkeys", "PyInstaller"]),
-            ("other", "Other software", False, ["Photoshop", "DaVinci Resolve", "Word & Excel"]),
+                                              "WebAuthn / passkeys"]),
+            ("other", "Tools", False, ["Visual Studio", "VS Code", "Claude Code", "pgAdmin", "Photoshop",
+                                      "DaVinci Resolve"]),
         ],
         "rows": [("Languages", [("Finnish", "native"), ("English", "excellent")]),
                  ("Other", [("Driving licence (B)", "own car")])],
-        "footer": ("Online", SITE + "/en.html", "Updated 10/2026"),
+        "footer": ("Online", SITE + "/en.html", "Updated 11/2026"),
         "legend": "filled = daily use · outlined = experience",
     },
 }
@@ -297,13 +306,13 @@ def circle_photo(c, path, x, y_top, d):
     buf.seek(0)
     c.saveState()
     p = c.beginPath()
-    p.circle(x + d / 2, y_top - d / 2, d / 2)
+    p.roundRect(x, y_top - d, d, d, 10)
     c.clipPath(p, stroke=0, fill=0)
     c.drawImage(ImageReader(buf), x, y_top - d, d, d)
     c.restoreState()
     c.setStrokeColor(LINE)
     c.setLineWidth(0.8)
-    c.circle(x + d / 2, y_top - d / 2, d / 2, stroke=1, fill=0)
+    c.roundRect(x, y_top - d, d, d, 10, stroke=1, fill=0)
 
 
 # ---------------------------------------------------------------- page
@@ -326,7 +335,7 @@ def build(lang, out_dir, phone):
     c.setFillColor(INK)
     c.setFont("Cond-Bd", 30)
     c.drawString(hx, top - 26, "Kasper Kuirinlahti")
-    spaced(c, d["title"].upper(), hx, top - 41, "Mono-Md", 8.6, BRINE, 1.4)
+    spaced(c, d["title"].upper(), hx, top - 41, "Mono-Md", 8.6, AMBER, 1.4)
     c.setFillColor(MUTED)
     c.setFont("Sans", 9)
     c.drawString(hx, top - 54, d["tagline"])

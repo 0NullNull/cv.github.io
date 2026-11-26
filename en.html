@@ -3,223 +3,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Kasper Kuirinlahti</title>
-    <meta name="description" content="Kasper Kuirinlahti – software developer. Full-stack .NET, databases, server infrastructure and AI integrations.">
-    <link rel="alternate" hreflang="fi" href="./">
-    <link rel="alternate" hreflang="en" href="en.html">
+    <title>Kasper Kuirinlahti · Software Developer</title>
+    <meta name="description" content="Kasper Kuirinlahti – full-stack .NET software developer. Web applications, databases, servers, security and AI integrations.">
+    <meta name="theme-color" content="#F6F4EF">
+    <script>
+    (function () {
+        try {
+            var t = localStorage.getItem("theme");
+            if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+        } catch (e) {}
+    })();
+    </script>
+    <link rel="canonical" href="https://kuirinlahti.dev/en.html">
+    <link rel="alternate" hreflang="fi" href="https://kuirinlahti.dev/">
+    <link rel="alternate" hreflang="en" href="https://kuirinlahti.dev/en.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://kuirinlahti.dev/en.html">
+    <meta property="og:title" content="Kasper Kuirinlahti · Software Developer">
+    <meta property="og:description" content="I turn ideas into working software — and keep it running. Full-stack .NET, PostgreSQL, Docker, security and AI.">
+    <meta property="og:image" content="https://kuirinlahti.dev/images/og-en.png">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;125,700;125,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="cv">
 
-    <nav class="topline" aria-label="Language">
-        <a class="pdf" href="Kasper_Kuirinlahti_CV_EN.pdf" download>Download PDF</a>
-        <div class="lang"><a href="./" hreflang="fi" lang="fi" data-lang="fi">FI</a><span aria-current="page">EN</span></div>
+<!-- =================================================================
+     Slide 1 — Short landing preview
+     ================================================================= -->
+<header class="slide">
+    <nav class="topbar" aria-label="Main navigation">
+        <a class="brand" href="#cv"><span class="brand-dot" aria-hidden="true"></span>Kasper Kuirinlahti</a>
+        <div class="nav-links">
+            <a class="hide-sm" href="#cv">CV</a>
+            <a href="osaaminen/en.html">Skills</a>
+            <div class="nav-controls">
+                <div class="lang"><a href="./" hreflang="fi" lang="fi" data-lang="fi">FI</a><span aria-current="page">EN</span></div>
+                <button class="theme-btn" type="button" id="themeToggle" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <!-- ===== Header ===== -->
-    <header class="head">
-        <img src="images/kuva.png" class="photo" alt="Kasper Kuirinlahti" width="601" height="625">
-        <div class="head-text">
-            <h1>Kasper Kuirinlahti</h1>
-            <p class="title">Software Developer</p>
-            <p class="tagline">Full-stack .NET · databases · server infrastructure · AI integrations</p>
-            <ul class="contact">
-                <li><span class="k">Email</span><a href="mailto:kasper@kuirinlahti.dev">kasper@kuirinlahti.dev</a></li>
-                <li><span class="k">GitHub</span><a href="https://github.com/0NullNull">github.com/0NullNull</a></li>
-                <li><span class="k">Location</span><span>Parkano, Finland</span></li>
-                <li class="print-only"><span class="k">Online</span><span>kuirinlahti.dev/en.html</span></li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="cols">
-
-        <!-- ===== Main ===== -->
-        <div class="main">
-
-            <section aria-labelledby="profile">
-                <h2 id="profile">Profile</h2>
-                <p class="profile">
-                    Software developer who designed and built a large operations platform that is in daily
-                    production use, end to end: from the user interface and APIs to the database, server
-                    infrastructure and AI integrations. I enjoy building systems where technology supports
-                    real work, and I learn new things quickly.
-                </p>
-                <p class="profile">
-                    I am a generalist by experience, and now I want to go deep in one area and grow into
-                    an expert in it alongside more experienced developers.
-                </p>
-                <p class="seeking"><span class="k">Looking for</span> software developer roles in the Pirkanmaa region or remote.</p>
-                <a class="feature" href="osaaminen/en.html">
-                    <span class="feature-tag">Skills</span>
-                    <span class="feature-title">What I can build</span>
-                    <span class="feature-cta">Read more &rarr;</span>
-                    <span class="print-only feature-url">kuirinlahti.dev/osaaminen/en.html</span>
-                </a>
-            </section>
-
-            <section aria-labelledby="experience">
-                <h2 id="experience">Experience</h2>
-
-                <article class="job">
-                    <div class="job-head">
-                        <h3>Software Developer</h3>
-                        <span class="when">11/2025&ndash;</span>
-                    </div>
-                    <p class="where">Suomen Tekojää Oy · ice rinks, heat pumps and refrigeration</p>
-                    <p class="job-intro">Designed and built the company's internal operations platform, which is in daily production use. I am responsible for its development and operation.</p>
-
-                    <ul class="subs">
-                        <li class="cat-core">
-                            <b>Operations platform</b><span class="tech">.NET 10 · Blazor · PostgreSQL</span>
-                            <span>Equipment registry, service and work reports, project management, chat and notifications.</span>
-                        </li>
-                        <li class="cat-integr">
-                            <b>PLC data collector</b><span class="tech">Python · Windows service</span>
-                            <span>Collects data from industrial controllers and passes it to the platform.</span>
-                        </li>
-                        <li class="cat-ai">
-                            <b>AI assistant</b><span class="tech">Claude API · Ollama · RAG</span>
-                            <span>Finds and works with company data within each user's access rights.</span>
-                        </li>
-                        <li class="cat-core">
-                            <b>Customer portal</b><span class="tech">ASP.NET Core</span>
-                            <span>Separate app for the company's customers.</span>
-                        </li>
-                        <li class="cat-infra">
-                            <b>Server infrastructure</b><span class="tech">Docker · Nginx · Linux</span>
-                            <span>Deployments, backups, monitoring and security.</span>
-                        </li>
-                    </ul>
-
-                </article>
-
-                <article class="job">
-                    <div class="job-head">
-                        <h3>Commissioned projects</h3>
-                        <span class="when">2021&ndash;2024</span>
-                    </div>
-                    <p class="where">During studies</p>
-                    <ul>
-                        <li>Games for local companies, commissioned through school.</li>
-                    </ul>
-                </article>
-            </section>
-
-            <section aria-labelledby="projects">
-                <h2 id="projects">Side projects</h2>
-                <article class="job">
-                    <div class="job-head">
-                        <h3><a class="plain" href="https://fun.kuirinlahti.dev">fun.kuirinlahti.dev</a></h3>
-                        <span class="when">2026</span>
-                    </div>
-                    <p class="where">Hobby project · browser games and a multiplayer game server · <a href="https://github.com/0NullNull/hittimeemi">source on GitHub</a></p>
-                    <ul>
-                        <li>A site of small browser games: Hittimeemi asks you to name a Finnish meme from a half-second clip, Reaktio is a real-time reaction duel between friends.</li>
-                        <li>Shared WebSocket library and a game server of my own: rooms with join codes, rejoining after a page reload, user accounts, leaderboards and an admin panel.</li>
-                        <li>Published on GitHub Pages under a custom domain, with a privacy notice.</li>
-                    </ul>
-                </article>
-            </section>
-
-            <section aria-labelledby="education">
-                <h2 id="education">Education</h2>
-                <article class="job">
-                    <div class="job-head">
-                        <h3>Vocational Qualification in Information and Communications Technology</h3>
-                        <span class="when">2021&ndash;2024</span>
-                    </div>
-                    <p class="where">Software Developer · Vuoksi</p>
-                </article>
-            </section>
-
-            <section aria-labelledby="trust">
-                <h2 id="trust">Positions of trust</h2>
-                <ul class="rows">
-                    <li><span>Vice-chair, Parkano Youth Council</span><span class="when">2019&ndash;2020</span></li>
-                </ul>
-            </section>
+    <div class="slide-main">
+        <div class="slide-copy">
+            <p class="status-pill">Parkano, Finland · Pirkanmaa &amp; remote</p>
+            <h1 class="headline">I turn ideas into working software — <em>and keep it running.</em></h1>
+            <p class="intro">
+                I'm Kasper, a software developer from Finland. I build web applications from the UI
+                down to the database and servers — <strong>always eager to pick up new technologies,
+                explore better approaches and keep improving.</strong>
+            </p>
+            <div class="actions">
+                <a class="btn btn-dark" href="#cv">See portfolio &amp; CV <span aria-hidden="true">↓</span></a>
+                <a class="btn btn-outline" href="mailto:kasper@kuirinlahti.dev">kasper@kuirinlahti.dev</a>
+            </div>
         </div>
 
-        <!-- ===== Sidebar ===== -->
-        <aside class="side">
-
-            <section class="cat-core" aria-labelledby="daily">
-                <h2 id="daily">Daily use</h2>
-                <div class="chips">
-                    <span>C#</span><span>.NET / ASP.NET Core</span><span>Blazor</span><span>Entity Framework</span><span>PostgreSQL</span><span>JavaScript</span><span>HTML / CSS</span><span>Docker</span><span>Linux</span><span>Git</span>
-                </div>
-            </section>
-
-            <section class="cat-core outline" aria-labelledby="familiar">
-                <h2 id="familiar">Experience with</h2>
-                <div class="chips">
-                    <span>Python</span><span>C++</span><span>SignalR</span><span>TimescaleDB</span><span>REST APIs</span>
-                </div>
-            </section>
-
-            <section class="cat-ai" aria-labelledby="ai">
-                <h2 id="ai">AI</h2>
-                <div class="chips">
-                    <span>Claude API</span><span>Ollama</span><span>RAG / pgvector</span><span>LLM agents</span><span>AI-assisted development</span>
-                </div>
-            </section>
-
-            <section class="cat-tools" aria-labelledby="devtools">
-                <h2 id="devtools">Development tools</h2>
-                <div class="chips">
-                    <span>Visual Studio</span><span>VS Code</span><span>Claude Code</span><span>GitHub</span><span>GitHub Actions</span><span>pgAdmin</span><span>xUnit</span>
-                </div>
-            </section>
-
-            <section class="cat-infra" aria-labelledby="infra">
-                <h2 id="infra">Infrastructure &amp; security</h2>
-                <div class="chips">
-                    <span>Docker Compose</span><span>Nginx</span><span>YARP</span><span>TLS / private CA</span><span>pgAudit</span>
-                </div>
-            </section>
-
-            <section class="cat-integr" aria-labelledby="integrations">
-                <h2 id="integrations">Integrations</h2>
-                <div class="chips">
-                    <span>Beckhoff TwinCAT / ADS</span><span>Microsoft Entra ID &amp; Graph</span><span>Pipedrive API</span><span>Google Maps API</span><span>Web Push</span><span>WebAuthn / passkeys</span><span>PyInstaller</span>
-                </div>
-            </section>
-
-            <section class="cat-other" aria-labelledby="software">
-                <h2 id="software">Other software</h2>
-                <div class="chips">
-                    <span>Photoshop</span><span>DaVinci Resolve</span><span>Word &amp; Excel</span>
-                </div>
-            </section>
-
-            <section class="cat-other" aria-labelledby="languages">
-                <h2 id="languages">Languages</h2>
-                <ul class="rows">
-                    <li><span>Finnish</span><span class="when">native</span></li>
-                    <li><span>English</span><span class="when">excellent</span></li>
-                </ul>
-            </section>
-
-            <section class="cat-other" aria-labelledby="other">
-                <h2 id="other">Other</h2>
-                <ul class="rows">
-                    <li><span>Driving licence (B)</span><span class="when">own car</span></li>
-                </ul>
-            </section>
-        </aside>
+        <figure class="portrait-card">
+            <div class="portrait-frame">
+                <img src="images/kuva.png" alt="Kasper Kuirinlahti" width="601" height="625">
+            </div>
+            <figcaption class="portrait-meta">
+                <strong>Kasper Kuirinlahti</strong>
+                <span>Software Developer</span>
+            </figcaption>
+        </figure>
     </div>
+
+    <div class="slide-foot">
+        <ul class="facts" aria-label="What I do">
+            <li><b>Full-stack .NET</b><span>C#, ASP.NET Core, Blazor, PostgreSQL and modern web</span></li>
+            <li><b>Servers &amp; security</b><span>Docker, Linux, Nginx, releases, backups and monitoring</span></li>
+            <li><b>Integrations &amp; devices</b><span>REST APIs, industrial PLC data and third-party services</span></li>
+            <li><b>AI &amp; learning</b><span>LLM tooling, RAG and continuously picking up new tech</span></li>
+        </ul>
+        <a class="scroll-hint" href="#cv">
+            <span>Full portfolio</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+    </div>
+</header>
+
+<!-- =================================================================
+     Full portfolio & CV
+     ================================================================= -->
+<main class="portfolio" id="cv" tabindex="-1">
+
+    <!-- 01 Profile -->
+    <section class="chapter" aria-labelledby="ch-profile">
+        <div class="chapter-label">
+            <span class="chapter-num">01</span>
+            <h2 id="ch-profile">Profile</h2>
+            <p>Who I am and what I'm looking for next.</p>
+        </div>
+        <div class="chapter-body">
+            <p class="lead-text">
+                Software developer currently designing, building and maintaining a company's internal
+                operations platform as its main developer: the user interface, APIs, database, server
+                infrastructure, security, industrial device integration and AI features.
+            </p>
+            <p class="body-text">
+                I enjoy building whole systems where technology solves real problems. I have worked
+                broadly on my own, and next I would like to join a team where I can share what I have
+                learned, learn from others and go deeper in one area.
+            </p>
+            <div class="meta-row">
+                <span class="meta-chip"><strong>Looking for</strong> software developer roles in Pirkanmaa or remote</span>
+                <a class="meta-chip" href="https://github.com/0NullNull"><strong>GitHub</strong> github.com/0NullNull ↗</a>
+            </div>
+            <a class="banner-link" href="osaaminen/en.html">
+                <span>
+                    <span class="banner-kicker">Closer look</span>
+                    <span class="banner-title">What I can build and how I work</span>
+                    <span class="print-only">kuirinlahti.dev/osaaminen/en.html</span>
+                </span>
+                <span class="banner-cta">Open skills page →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 02 Experience -->
+    <section class="chapter" aria-labelledby="ch-experience">
+        <div class="chapter-label">
+            <span class="chapter-num">02</span>
+            <h2 id="ch-experience">Experience</h2>
+            <p>Systems and projects I have built.</p>
+        </div>
+        <div class="chapter-body">
+            <article class="role-card">
+                <div class="role-top">
+                    <div>
+                        <h3>Software Developer</h3>
+                        <p class="role-company">Suomen Tekojää Oy · ice rinks, heat pumps and refrigeration</p>
+                    </div>
+                    <span class="date-pill">11/2025 — present</span>
+                </div>
+                <p class="body-text">
+                    I design and build the company's internal operations platform and handle its releases,
+                    servers and security. The platform is live in production with its first users and
+                    being rolled out gradually.
+                </p>
+                <div class="bento">
+                    <div class="bento-item wide">
+                        <div class="bento-head">
+                            <h4>Operations platform</h4>
+                            <span class="bento-tech">.NET 10 · Blazor · PostgreSQL</span>
+                        </div>
+                        <p>Equipment registry, service and work reports, projects and Gantt, files, chat and notifications. Bilingual PWA with role- and site-level permissions.</p>
+                    </div>
+                    <div class="bento-item">
+                        <div class="bento-head">
+                            <h4>PLC data collection</h4>
+                            <span class="bento-tech">Python · Beckhoff ADS</span>
+                        </div>
+                        <p>Windows service for industrial PCs: reads the controllers and sends the data signed and encrypted. Alarms open service tickets automatically.</p>
+                    </div>
+                    <div class="bento-item">
+                        <div class="bento-head">
+                            <h4>AI assistant</h4>
+                            <span class="bento-tech">Claude API · Ollama · RAG</span>
+                        </div>
+                        <p>Tool-calling assistant and document search over company data, always within the user's access rights.</p>
+                    </div>
+                    <div class="bento-item">
+                        <div class="bento-head">
+                            <h4>Customer portal</h4>
+                            <span class="bento-tech">ASP.NET Core</span>
+                        </div>
+                        <p>Separate app for the company's customers, with restricted database views and no access to staff data.</p>
+                    </div>
+                    <div class="bento-item">
+                        <div class="bento-head">
+                            <h4>Servers and security</h4>
+                            <span class="bento-tech">Docker · Nginx · Linux</span>
+                        </div>
+                        <p>Self-hosted container environment: scripted releases with rollback, backups, monitoring, alerts and security.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="past-row">
+                <div>
+                    <h3>Commissioned projects</h3>
+                    <p>During studies · Games for local companies, commissioned through school.</p>
+                </div>
+                <span class="date-pill">2021 — 2024</span>
+            </article>
+        </div>
+    </section>
+
+    <!-- 03 Technical skills -->
+    <section class="chapter" aria-labelledby="ch-skills">
+        <div class="chapter-label">
+            <span class="chapter-num">03</span>
+            <h2 id="ch-skills">Technologies</h2>
+            <p>Tools and technologies I use to build and run systems.</p>
+        </div>
+        <div class="chapter-body">
+            <div class="skill-grid">
+                <div class="skill-card primary">
+                    <h3>Daily use</h3>
+                    <div class="tags">
+                        <span>C#</span><span>.NET / ASP.NET Core</span><span>Blazor</span><span>Entity Framework</span><span>SignalR</span><span>PostgreSQL</span><span>JavaScript</span><span>HTML / CSS</span><span>Git</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Also in production</h3>
+                    <div class="tags">
+                        <span>Python</span><span>Bash</span><span>Node.js</span><span>FastAPI</span><span>TimescaleDB</span><span>pgvector</span><span>xUnit</span><span>GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Infrastructure &amp; security</h3>
+                    <div class="tags">
+                        <span>Docker Compose</span><span>Linux</span><span>Nginx</span><span>YARP</span><span>TLS / private CA</span><span>pgAudit</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>AI</h3>
+                    <div class="tags">
+                        <span>Claude API</span><span>Tool calling</span><span>Ollama</span><span>RAG</span><span>AI-assisted development</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Integrations</h3>
+                    <div class="tags">
+                        <span>Beckhoff TwinCAT / ADS</span><span>Entra ID &amp; Graph</span><span>Teams bot</span><span>Pipedrive API</span><span>Google Maps API</span><span>Web Push</span><span>WebAuthn / passkeys</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <div class="tags">
+                        <span>Visual Studio</span><span>VS Code</span><span>Claude Code</span><span>pgAdmin</span><span>Photoshop</span><span>DaVinci Resolve</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 Side projects -->
+    <section class="chapter" aria-labelledby="ch-projects">
+        <div class="chapter-label">
+            <span class="chapter-num">04</span>
+            <h2 id="ch-projects">Side projects</h2>
+            <p>Public source code and personal builds.</p>
+        </div>
+        <div class="chapter-body">
+            <article class="project-card">
+                <div class="project-top">
+                    <div>
+                        <h3>fun.kuirinlahti.dev</h3>
+                        <p class="project-sub">Browser games and a multiplayer game server · 2026</p>
+                    </div>
+                    <div class="project-links">
+                        <a class="pill-link" href="https://fun.kuirinlahti.dev">Open site ↗</a>
+                        <a class="pill-link" href="https://github.com/0NullNull/hittimeemi">GitHub ↗</a>
+                    </div>
+                </div>
+                <ul class="project-list">
+                    <li>A site of small browser games: Hittimeemi asks you to name a Finnish meme from a half-second clip, Reaktio is a real-time reaction duel between friends.</li>
+                    <li>Shared WebSocket library and a game server of my own: rooms with join codes, rejoining after a page reload, user accounts, leaderboards and an admin panel.</li>
+                    <li>Published on GitHub Pages under a custom domain, with a privacy notice.</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- 05 Background -->
+    <section class="chapter" aria-labelledby="ch-background">
+        <div class="chapter-label">
+            <span class="chapter-num">05</span>
+            <h2 id="ch-background">Background</h2>
+            <p>Education, languages and basics.</p>
+        </div>
+        <div class="chapter-body">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Education</h3>
+                    <p class="big">Vocational Qualification in ICT</p>
+                    <p class="sub">Software Developer · Vuoksi · 2021–2024</p>
+                </div>
+                <div class="info-card">
+                    <h3>Languages &amp; other</h3>
+                    <ul class="kv">
+                        <li><span>Finnish</span><span class="v">native</span></li>
+                        <li><span>English</span><span class="v">excellent</span></li>
+                        <li><span>Driving licence (B)</span><span class="v">own car</span></li>
+                        <li><span>Parkano Youth Council, vice-chair</span><span class="v">2019–2020</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact strip -->
+    <section class="contact-strip" aria-label="Contact">
+        <div>
+            <h2>Interested? <em>Get in touch.</em></h2>
+            <p>Happy to tell you more about my projects and how I work. Phone number available on request by email.</p>
+        </div>
+        <div class="actions">
+            <a class="btn btn-dark" href="mailto:kasper@kuirinlahti.dev">kasper@kuirinlahti.dev</a>
+            <a class="btn btn-outline" href="https://github.com/0NullNull">GitHub ↗</a>
+        </div>
+    </section>
+
 </main>
+
+<footer class="site-foot">
+    <span>Kasper Kuirinlahti · kuirinlahti.dev</span>
+    <a href="#">Back to top ↑</a>
+</footer>
+
 <script>
     document.querySelectorAll("[data-lang]").forEach(function (a) {
         a.addEventListener("click", function () {
             try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {}
         });
     });
+    document.getElementById("themeToggle").addEventListener("click", function () {
+        var root = document.documentElement;
+        var dark = root.dataset.theme === "dark" ||
+            (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = dark ? "light" : "dark";
+        root.dataset.theme = next;
+        try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+
+    // One scroll down glides completely off the start slide onto #cv,
+    // and scrolling up at the very top of #cv glides back to the start slide.
+    (function () {
+        var slide = document.querySelector(".slide");
+        var cv = document.getElementById("cv");
+        if (!slide || !cv) return;
+        var lockedUntil = 0;
+        var lastWheel = 0;
+        var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        function jumpTo(y) {
+            lockedUntil = Date.now() + 700;
+            window.scrollTo({ top: y, behavior: reduced ? "auto" : "smooth" });
+        }
+        window.addEventListener("wheel", function (e) {
+            if (Math.abs(e.deltaY) < 4) return;
+            var now = Date.now();
+            var freshGesture = now - lastWheel > 250;
+            lastWheel = now;
+            if (now < lockedUntil) { e.preventDefault(); return; }
+            var y = window.scrollY;
+            var cvTop = cv.offsetTop;
+            var slideBottom = slide.getBoundingClientRect().bottom;
+            if (e.deltaY > 0 && y < cvTop - 20 && slideBottom <= window.innerHeight + 24) {
+                e.preventDefault();
+                jumpTo(cvTop);
+            } else if (e.deltaY < 0 && y > 0 && (y < cvTop - 4 || (y <= cvTop + 12 && freshGesture))) {
+                e.preventDefault();
+                jumpTo(0);
+            }
+        }, { passive: false });
+        window.addEventListener("keydown", function (e) {
+            if (e.metaKey || e.ctrlKey || e.altKey) return;
+            var y = window.scrollY;
+            var cvTop = cv.offsetTop;
+            if ((e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") && y < 20) {
+                e.preventDefault();
+                jumpTo(cvTop);
+            } else if ((e.key === "ArrowUp" || e.key === "PageUp") && y >= cvTop - 12 && y <= cvTop + 12) {
+                e.preventDefault();
+                jumpTo(0);
+            }
+        });
+    })();
 </script>
 </body>
 </html>

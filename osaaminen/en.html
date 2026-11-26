@@ -5,18 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Skills · Kasper Kuirinlahti</title>
 <meta name="description" content="Kasper Kuirinlahti's technical skills: full-stack .NET, databases, AI integrations and server environments.">
+<script>
+(function () {
+    try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    } catch (e) {}
+})();
+</script>
 <link rel="alternate" hreflang="fi" href="./">
 <link rel="alternate" hreflang="en" href="en.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;125,700;125,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="osaaminen.css">
 </head>
 <body>
 <main class="wrap">
   <nav class="topbar" aria-label="Page">
-    <a href="../en.html">← Back to CV</a>
-    <div class="lang"><a href="./" hreflang="fi" lang="fi" data-lang="fi">FI</a><span aria-current="page">EN</span></div>
+    <a class="back" href="../en.html#cv">← Back to CV</a>
+    <div class="nav-controls">
+      <div class="lang"><a href="./" hreflang="fi" lang="fi" data-lang="fi">FI</a><span aria-current="page">EN</span></div>
+      <button class="theme-btn" type="button" id="themeToggle" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
   </nav>
 
   <!-- ===== Hero ===== -->
@@ -25,18 +39,18 @@
       <p class="eyebrow">Skills · Kasper Kuirinlahti</p>
       <h1>Complete systems, from the <em>database</em> to the user interface.</h1>
       <p class="lede">
-        I have designed, built and maintained a large web application on my own, end to end.
+        In my current job, I design, build and maintain a large web application end to end.
         This page describes, at a general level, what I can build and how I work.
       </p>
       <div class="role">
         <span>Full-stack development</span>
         <span>Architecture</span>
-        <span>Running it in production</span>
+        <span>Servers &amp; releases</span>
       </div>
     </div>
 
-    <aside class="plate" aria-label="At a glance">
-      <div class="plate-head"><strong>At a glance</strong><span>2026</span></div>
+    <aside class="summary-card" aria-label="At a glance">
+      <div class="summary-head"><strong>At a glance</strong><span>2026</span></div>
       <dl>
         <dt>Main stack</dt><dd>.NET · Blazor</dd>
         <dt>Database</dt><dd>PostgreSQL</dd>
@@ -52,7 +66,7 @@
     <div class="sec-head">
       <p class="eyebrow">What I can build</p>
       <h2 id="what">Areas</h2>
-      <p>I have done all of these in a system that is in production use, not only in practice projects.</p>
+      <p>I have built all of these for a real system running in a production environment, not only in practice projects.</p>
     </div>
 
     <div class="caps">
@@ -109,7 +123,7 @@
           <li>Container-based environment with Docker Compose</li>
           <li>Nginx as a reverse proxy</li>
           <li>Scripted releases, rollbacks and backups</li>
-          <li>Monitoring and a separate test environment</li>
+          <li>Monitoring, alerts and log tracking</li>
         </ul>
       </article>
     </div>
@@ -144,7 +158,7 @@
       </div>
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
-        <div><h3>AI-assisted development</h3><p>I use agent-based development guided by maintained architecture documentation. Every change is reviewed before it is released.</p></div>
+        <div><h3>AI-assisted development</h3><p>I use agent-based development guided by maintained architecture documentation. I review every change myself, and CI runs the tests before release.</p></div>
       </div>
     </div>
   </section>
@@ -181,7 +195,7 @@
   </aside>
 
   <footer>
-    <a href="../en.html">Kasper Kuirinlahti · CV</a>
+    <a href="../en.html#cv">← Kasper Kuirinlahti · CV</a>
     <span>2026</span>
   </footer>
 
@@ -191,6 +205,14 @@
         a.addEventListener("click", function () {
             try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {}
         });
+    });
+    document.getElementById("themeToggle").addEventListener("click", function () {
+        var root = document.documentElement;
+        var dark = root.dataset.theme === "dark" ||
+            (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = dark ? "light" : "dark";
+        root.dataset.theme = next;
+        try { localStorage.setItem("theme", next); } catch (e) {}
     });
 </script>
 </body>

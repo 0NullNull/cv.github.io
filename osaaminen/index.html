@@ -6,9 +6,12 @@
 <title>Osaaminen · Kasper Kuirinlahti</title>
 <meta name="description" content="Kasper Kuirinlahden tekninen osaaminen: full-stack .NET, tietokannat, tekoälyintegraatiot ja palvelinympäristöt.">
 <script>
-// Send visitors whose browser languages include no Finnish to the English page,
-// unless they already picked a language with the FI/EN switch.
 (function () {
+    try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    } catch (e) {}
+    if (/bot|crawl|spider|slurp|preview|facebookexternalhit|linkedin/i.test(navigator.userAgent)) return;
     var pref = null;
     try { pref = localStorage.getItem("lang"); } catch (e) {}
     if (pref === "fi") return;
@@ -19,16 +22,22 @@
 </script>
 <link rel="alternate" hreflang="fi" href="./">
 <link rel="alternate" hreflang="en" href="en.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;125,700;125,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="osaaminen.css">
 </head>
 <body>
 <main class="wrap">
   <nav class="topbar" aria-label="Sivu">
-    <a href="../">← Takaisin CV:hen</a>
-    <div class="lang"><span aria-current="page">FI</span><a href="en.html" hreflang="en" lang="en" data-lang="en">EN</a></div>
+    <a class="back" href="../#cv">← Takaisin CV:hen</a>
+    <div class="nav-controls">
+      <div class="lang"><span aria-current="page">FI</span><a href="en.html" hreflang="en" lang="en" data-lang="en">EN</a></div>
+      <button class="theme-btn" type="button" id="themeToggle" aria-label="Vaihda teema">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
   </nav>
 
   <!-- ===== Hero ===== -->
@@ -37,18 +46,18 @@
       <p class="eyebrow">Osaaminen · Kasper Kuirinlahti</p>
       <h1>Kokonaisia järjestelmiä <em>tietokannasta</em> käyttöliittymään.</h1>
       <p class="lede">
-        Olen suunnitellut, rakentanut ja ylläpitänyt laajaa web-sovellusta yksin alusta loppuun.
+        Suunnittelen, rakennan ja ylläpidän työssäni laajaa web-sovellusta alusta loppuun.
         Tällä sivulla kerron yleisellä tasolla, millaisia asioita osaan rakentaa ja miten teen työtä.
       </p>
       <div class="role">
         <span>Full-stack-kehitys</span>
         <span>Arkkitehtuuri</span>
-        <span>Ylläpito tuotannossa</span>
+        <span>Palvelimet &amp; julkaisut</span>
       </div>
     </div>
 
-    <aside class="plate" aria-label="Lyhyesti">
-      <div class="plate-head"><strong>Lyhyesti</strong><span>2026</span></div>
+    <aside class="summary-card" aria-label="Lyhyesti">
+      <div class="summary-head"><strong>Lyhyesti</strong><span>2026</span></div>
       <dl>
         <dt>Pääpino</dt><dd>.NET · Blazor</dd>
         <dt>Tietokanta</dt><dd>PostgreSQL</dd>
@@ -64,7 +73,7 @@
     <div class="sec-head">
       <p class="eyebrow">Mitä osaan rakentaa</p>
       <h2 id="what">Osa-alueet</h2>
-      <p>Olen tehnyt kaikkia näitä tuotantokäytössä olevaan järjestelmään, en vain harjoitusprojekteissa.</p>
+      <p>Olen toteuttanut näitä oikeaan, tuotantoympäristössä ajettavaan järjestelmään, en vain harjoitusprojekteissa.</p>
     </div>
 
     <div class="caps">
@@ -121,7 +130,7 @@
           <li>Konttipohjainen ympäristö Docker Composella</li>
           <li>Nginx käänteisvälityspalvelimena</li>
           <li>Skriptatut julkaisut, palautukset ja varmuuskopiot</li>
-          <li>Valvonta ja erillinen testiympäristö</li>
+          <li>Valvonta, hälytykset ja lokiseuranta</li>
         </ul>
       </article>
     </div>
@@ -156,7 +165,7 @@
       </div>
       <div class="practice">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
-        <div><h3>Tekoälyavusteinen kehitys</h3><p>Käytän agenttipohjaista kehitystä, jota ohjaa ylläpidetty arkkitehtuuridokumentaatio. Jokainen muutos käydään läpi ennen julkaisua.</p></div>
+        <div><h3>Tekoälyavusteinen kehitys</h3><p>Käytän agenttipohjaista kehitystä, jota ohjaa ylläpidetty arkkitehtuuridokumentaatio. Käyn jokaisen muutoksen itse läpi, ja CI ajaa testit ennen julkaisua.</p></div>
       </div>
     </div>
   </section>
@@ -193,7 +202,7 @@
   </aside>
 
   <footer>
-    <a href="../">Kasper Kuirinlahti · CV</a>
+    <a href="../#cv">← Kasper Kuirinlahti · CV</a>
     <span>2026</span>
   </footer>
 
@@ -203,6 +212,14 @@
         a.addEventListener("click", function () {
             try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {}
         });
+    });
+    document.getElementById("themeToggle").addEventListener("click", function () {
+        var root = document.documentElement;
+        var dark = root.dataset.theme === "dark" ||
+            (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = dark ? "light" : "dark";
+        root.dataset.theme = next;
+        try { localStorage.setItem("theme", next); } catch (e) {}
     });
 </script>
 </body>
