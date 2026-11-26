@@ -113,10 +113,7 @@ CONTENT = {
         },
         "job2": ("Tilaustyöprojektit", "2021–2024", "Opintojen aikana",
                  "Pelejä paikallisille yrityksille tilaustyönä koulun kautta."),
-        "side": ("fun.kuirinlahti.dev", "2026", "Harrasteprojekti · selainpelejä ja oma moninpelipalvelin",
-                 "Hittimeemi tunnistuttaa suomalaisen meemin puolen sekunnin pätkästä, Reaktio on reaaliaikainen "
-                 "reaktiokisa. Oma WebSocket-pelipalvelin: huoneet koodeilla, käyttäjätilit ja tulostaulut.",
-                 "https://fun.kuirinlahti.dev"),
+        "side": None,
         "edu": ("Tieto- ja viestintätekniikan perustutkinto", "2021–2024", "Ohjelmistokehittäjä · Vuoksi"),
         "trust": [("Parkanon nuorisovaltuuston varapuheenjohtaja", "2019–2020")],
         "groups": [
@@ -186,10 +183,7 @@ CONTENT = {
         },
         "job2": ("Commissioned projects", "2021–2024", "During studies",
                  "Games for local companies, commissioned through school."),
-        "side": ("fun.kuirinlahti.dev", "2026", "Hobby project · browser games and a multiplayer game server",
-                 "Hittimeemi asks you to name a Finnish meme from a half-second clip, Reaktio is a real-time "
-                 "reaction duel. Own WebSocket game server: rooms with join codes, user accounts and leaderboards.",
-                 "https://fun.kuirinlahti.dev"),
+        "side": None,
         "edu": ("Vocational Qualification in ICT", "2021–2024", "Software Developer · Vuoksi"),
         "trust": [("Vice-chair, Parkano Youth Council", "2019–2020")],
         "groups": [
@@ -446,16 +440,17 @@ def build(lang, out_dir, phone):
     y -= 14
     y -= para(c, where2 + " · " + desc2, style(8.8, color=MUTED), x, y, w) + 10
 
-    # side project
-    y -= main_heading(c, d["h"]["side"], x, y, w)
-    st, sw, swhere, sdesc, surl = d["side"]
-    c.setFillColor(BRINE)
-    c.setFont("Sans-Sb", 10)
-    c.drawString(x, y - 9.5, st)
-    c.linkURL(surl, (x, y - 12, x + pdfmetrics.stringWidth(st, "Sans-Sb", 10), y), relative=0)
-    pill(c, sw, x + w, y)
-    y -= 14
-    y -= para(c, swhere + " · " + sdesc, style(8.5, color=MUTED, leading=11.2), x, y, w) + 10
+    # side project (optional)
+    if d.get("side"):
+        y -= main_heading(c, d["h"]["side"], x, y, w)
+        st, sw, swhere, sdesc, surl = d["side"]
+        c.setFillColor(BRINE)
+        c.setFont("Sans-Sb", 10)
+        c.drawString(x, y - 9.5, st)
+        c.linkURL(surl, (x, y - 12, x + pdfmetrics.stringWidth(st, "Sans-Sb", 10), y), relative=0)
+        pill(c, sw, x + w, y)
+        y -= 14
+        y -= para(c, swhere + " · " + sdesc, style(8.5, color=MUTED, leading=11.2), x, y, w) + 10
 
     # education
     y -= main_heading(c, d["h"]["edu"], x, y, w)
