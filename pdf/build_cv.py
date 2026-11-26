@@ -84,7 +84,7 @@ CONTENT = {
             "Olen tehnyt töitä laaja-alaisesti yksin, ja seuraavaksi haluaisin tiimiin, jossa pääsen "
             "jakamaan osaamistani, oppimaan muilta ja syventymään yhteen alueeseen.",
         ],
-        "seeking": ("Haen", "ohjelmistokehittäjän tehtäviä Pirkanmaalla tai etänä."),
+        "seeking": ("Haen", "ensisijaisesti etätyötä; satunnaiset toimistopäivät tai tarvittaessa lähityö onnistuvat."),
         "job": {
             "title": "Ohjelmistokehittäjä", "when": "11/2025–",
             "where": "Suomen Tekojää Oy · jäähallit, lämpöpumput ja kylmätekniikka",
@@ -135,7 +135,7 @@ CONTENT = {
                                          "DaVinci Resolve"]),
         ],
         "rows": [("Kielet", [("Suomi", "äidinkieli"), ("Englanti", "erinomainen")]),
-                 ("Muuta", [("B-ajokortti", "oma auto")])],
+                 ("Muuta", [("Kyberturvallisuus", "opiskelu (TryHackMe)"), ("B-ajokortti", "oma auto")])],
         "footer": ("Verkossa", SITE, "Päivitetty 11/2026"),
         "legend": "täytetty = päivittäin · ääriviiva = kokemusta",
     },
@@ -157,7 +157,7 @@ CONTENT = {
             "I have worked broadly on my own, and next I would like to join a team where I can share "
             "what I have learned, learn from others and go deeper in one area.",
         ],
-        "seeking": ("Looking for", "software developer roles in the Pirkanmaa region or remote."),
+        "seeking": ("Looking for", "primarily remote roles; occasional office visits or on-site possible if needed."),
         "job": {
             "title": "Software Developer", "when": "11/2025–",
             "where": "Suomen Tekojää Oy · ice rinks, heat pumps and refrigeration",
@@ -207,7 +207,7 @@ CONTENT = {
                                       "DaVinci Resolve"]),
         ],
         "rows": [("Languages", [("Finnish", "native"), ("English", "excellent")]),
-                 ("Other", [("Driving licence (B)", "own car")])],
+                 ("Other", [("Cybersecurity", "self-study (TryHackMe)"), ("Driving licence (B)", "own car")])],
         "footer": ("Online", SITE + "/en.html", "Updated 11/2026"),
         "legend": "filled = daily use · outlined = experience",
     },
